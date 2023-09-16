@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.9" type="plugin" group="content" method="upgrade">
+	<name>PLG_CONTENT_SOCIALSHARE</name>
+	<creationDate>01-09-2023</creationDate>
+	<author>Joomill</author>
+	<authorEmail>info@joomill.nl</authorEmail>
+	<authorUrl>https://www.joomill.nl</authorUrl>
+	<copyright>Copyright (C) 2023 joomill. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.0.0</version>
+	<description>PLG_CONTENT_SOCIALSHARE_XML_DESCRIPTION</description>
+
+	<!-- Scripts to run on installation -->
+	<scriptfile>script.php</scriptfile>
+
+	<!-- Files -->
+	<files>
+		<filename plugin="socialshare">socialshare.php</filename>
+		<filename>script.php</filename>
+        <folder>language</folder>
+        <folder>media</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<!-- Media -->
+	<media destination="plg_content_socialshare" folder="media">
+		<folder>css</folder>
+	</media>
+
+	<!-- Languages -->
+	<languages folder="language">
+		<language tag="en-GB">en-GB/plg_content_socialshare.ini</language>
+		<language tag="en-GB">en-GB/plg_content_socialshare.sys.ini</language>
+	</languages>
+
+	<!-- Configuration / Parameters -->
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+						name="displayPlatformname"
+						type="radio"
+						label="PLG_CONTENT_SOCIALSHARE_PLATFORMNAME_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_PLATFORMNAME_DESC"
+						class="btn-group btn-group-yesno"
+						default="0"
+
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+						name="displayCategories"
+						type="category"
+						label="PLG_CONTENT_SOCIALSHARE_CATEGORIES_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_CATEGORIES_DESC"
+						extension="com_content"
+						multiple="true"
+						size="10"
+				/>
+				<field
+						name="displayPosition"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="bottom"
+						label="PLG_CONTENT_SOCIALSHARE_POSITION_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_POSITION_DESC"
+				>
+					<option value="top">PLG_CONTENT_SOCIALSHARE_POSITION_OPTION_TOP</option>
+					<option value="bottom">PLG_CONTENT_SOCIALSHARE_POSITION_OPTION_BOTTOM</option>
+				</field>
+				<field
+						name="stickyShare"
+						type="radio"
+						label="PLG_CONTENT_SOCIALSHARE_STICKY_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_STICKY_DESC"
+						class="btn-group btn-group-yesno"
+						default=""
+
+				>
+					<option value="">JNO</option>
+					<option value="sticky-share">JYES</option>
+				</field>
+				<field
+						name="viewCategory"
+						type="radio"
+						label="PLG_CONTENT_SOCIALSHARE_VIEW_CATEGORY_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_VIEW_CATEGORY_DESC"
+						class="btn-group btn-group-yesno"
+						default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+						name="viewArticle"
+						type="radio"
+						label="PLG_CONTENT_SOCIALSHARE_VIEW_ARTICLE_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_VIEW_ARTICLE_DESC"
+						class="btn-group btn-group-yesno"
+						default="1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+						name="viewArchive"
+						type="radio"
+						label="PLG_CONTENT_SOCIALSHARE_VIEW_ARCHIVE_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_VIEW_ARCHIVE_DESC"
+						class="btn-group btn-group-yesno"
+						default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+						name="viewFeatured"
+						type="radio"
+						label="PLG_CONTENT_SOCIALSHARE_VIEW_FEATURED_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_VIEW_FEATURED_DESC"
+						class="btn-group btn-group-yesno"
+						default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			<fieldset name="platforms">
+				<field
+					name="displayFacebook"
+					type="radio"
+					label="PLG_CONTENT_SOCIALSHARE_FACEBOOK_LABEL"
+					description="PLG_CONTENT_SOCIALSHARE_FACEBOOK_DESC"
+					class="btn-group btn-group-yesno"
+					default="1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+						name="displayTwitter"
+						type="radio"
+						label="PLG_CONTENT_SOCIALSHARE_TWITTER_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_TWITTER_DESC"
+						class="btn-group btn-group-yesno"
+						default="1"
+
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="displayLinkedin"
+					type="radio"
+					label="PLG_CONTENT_SOCIALSHARE_LINKEDIN_LABEL"
+					description="PLG_CONTENT_SOCIALSHARE_LINKEDIN_DESC"
+					class="btn-group btn-group-yesno"
+					default="1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="displayPinterest"
+					type="radio"
+					label="PLG_CONTENT_SOCIALSHARE_PINTEREST_LABEL"
+					description="PLG_CONTENT_SOCIALSHARE_PINTEREST_DESC"
+					class="btn-group btn-group-yesno"
+					default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+						name="displayReddit"
+						type="radio"
+						label="PLG_CONTENT_SOCIALSHARE_REDDIT_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_REDDIT_DESC"
+						class="btn-group btn-group-yesno"
+						default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+						name="displayTumblr"
+						type="radio"
+						label="PLG_CONTENT_SOCIALSHARE_TUMBLR_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_TUMBLR_DESC"
+						class="btn-group btn-group-yesno"
+						default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="displayWhatsapp"
+					type="radio"
+					label="PLG_CONTENT_SOCIALSHARE_WHATSAPP_LABEL"
+					description="PLG_CONTENT_SOCIALSHARE_WHATSAPP_DESC"
+					class="btn-group btn-group-yesno"
+					default="1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+						name="displayTelegram"
+						type="radio"
+						label="PLG_CONTENT_SOCIALSHARE_TELEGRAM_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_TELEGRAM_DESC"
+						class="btn-group btn-group-yesno"
+						default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+						name="displayFlipboard"
+						type="radio"
+						label="PLG_CONTENT_SOCIALSHARE_FLIPBOARD_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_FLIPBOARD_DESC"
+						class="btn-group btn-group-yesno"
+						default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+						name="displayPocket"
+						type="radio"
+						label="PLG_CONTENT_SOCIALSHARE_POCKET_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_POCKET_DESC"
+						class="btn-group btn-group-yesno"
+						default="0"
+
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+						name="displayTrello"
+						type="radio"
+						label="PLG_CONTENT_SOCIALSHARE_TRELLO_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_TRELLO_DESC"
+						class="btn-group btn-group-yesno"
+						default="0"
+
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="displayEmail"
+					type="radio"
+					label="PLG_CONTENT_SOCIALSHARE_EMAIL_LABEL"
+					description="PLG_CONTENT_SOCIALSHARE_EMAIL_DESC"
+					class="btn-group btn-group-yesno"
+					default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="Joomill Tag Manager">https://raw.githubusercontent.com/Joomill/Socialshare/master/update.xml</server>
+	</updateservers>
+</extension>

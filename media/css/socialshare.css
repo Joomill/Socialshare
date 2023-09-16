@@ -1,0 +1,181 @@
+.share-container ul {
+    overflow: visible;
+}
+
+.socialshare-buttons {
+    box-sizing: border-box;
+    font-size: 12px;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.socialshare-buttons:after {
+    clear: both;
+}
+
+.socialshare-buttons:after,
+.socialshare-buttons:before {
+    content: " ";
+    display: table;
+}
+
+.socialshare-buttons li {
+    box-sizing: border-box;
+    float: left;
+    height: 100%;
+    line-height: 13px;
+    list-style: none;
+    margin: 0;
+    padding: 2px;
+}
+
+.socialshare-buttons li a {
+    background-color: #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: block;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 700;
+    height: 100%;
+    padding: 10px 12px 10px 24px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    width: 100%;
+}
+
+.socialshare-buttons li a .socialshare-icon {
+    display: block;
+    left: 9px;
+    padding-top: 7px;
+    position: absolute;
+    top: 0;
+    width: 10%;
+}
+.socialshare-buttons li a .socialshare-icon svg {
+    height: 18px;
+    width: 18px;
+}
+.socialshare-buttons li a .socialshare-icon svg path {
+    fill: #fff;
+}
+
+.socialshare-buttons li a:active {
+    box-shadow: inset 1px 3px 15px 0 rgba(22, 0, 0, 0.25);
+}
+
+.socialshare-buttons li a .socialshare-text {
+    font-size: 11px;
+    margin-left: 10px;
+    color: #fff;
+}
+
+.share-container {
+    padding: 10px 0;
+    display: inline-block;
+}
+
+.socialshare-buttons li.socialshare-facebook a {
+    background-color: #1877f2;
+}
+.socialshare-buttons li.socialshare-facebook a:hover {
+    background-color: #166fe5;
+}
+.socialshare-buttons li.socialshare-linkedin a {
+    background-color: #0a66c2;
+}
+.socialshare-buttons li.socialshare-linkedin a:hover {
+    background-color: #004182;
+}
+.socialshare-buttons li.socialshare-twitter a {
+    background-color: #000000;
+}
+.socialshare-buttons li.socialshare-twitter a:hover {
+    background-color: #222222;
+}
+.socialshare-buttons li.socialshare-pinterest a {
+    background-color: #e60023;
+}
+.socialshare-buttons li.socialshare-pinterest a:hover {
+    background-color: #ad081b;
+}
+.socialshare-buttons li.socialshare-reddit a {
+    background-color: #ff4500;
+}
+.socialshare-buttons li.socialshare-reddit a:hover {
+    background-color: #962900;
+}
+.socialshare-buttons li.socialshare-tumblr a {
+    background-color: #2f4155;
+}
+.socialshare-buttons li.socialshare-tumblr a:hover {
+    background-color: #445e7b;
+}
+.socialshare-buttons li.socialshare-pocket a {
+    background-color: #ed4054;
+}
+.socialshare-buttons li.socialshare-pocket a:hover {
+    background-color: #e4162d;
+}
+.socialshare-buttons li.socialshare-whatsapp a {
+    background-color: #00a884;
+}
+.socialshare-buttons li.socialshare-whatsapp a:hover {
+    background-color: #00cea2;
+}
+.socialshare-buttons li.socialshare-telegram a {
+    background-color: #179cde;
+}
+.socialshare-buttons li.socialshare-telegram a:hover {
+    background-color: #29a9eb;
+}
+.socialshare-buttons li.socialshare-flipboard a {
+    background-color: #f52828;
+}
+.socialshare-buttons li.socialshare-flipboard a:hover {
+    background-color: #e00a0a;
+}
+.socialshare-buttons li.socialshare-trello a {
+    background-color: #0079bf;
+}
+.socialshare-buttons li.socialshare-trello a:hover {
+    background-color: #00c2e0;
+}
+.socialshare-buttons li.socialshare-email a {
+    background-color: #7d7d7d;
+}
+.socialshare-buttons li.socialshare-email a:hover {
+    background-color: #777777;
+}
+
+/* Smartphones and Tablets */
+@media (max-width: 767px) {
+    .socialshare-buttons li {
+        width: 42px !important;
+    }
+
+    .socialshare-buttons li a .socialshare-text {
+        visibility: hidden;
+    }
+
+    .socialshare-buttons li a .socialshare-icon {
+        width: 17px;
+        height: 17px
+    }
+
+    .sticky-share {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding-left: 10px;
+        right: 0;
+        background: #ffffff;
+        box-shadow: 2px 0 5px rgba(57, 63, 72, 0.1);
+        z-index: 9999;
+    }
+}
