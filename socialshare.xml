@@ -303,6 +303,6 @@
 		</fields>
 	</config>
 	<updateservers>
-		<server type="extension" priority="1" name="Joomill Tag Manager">https://raw.githubusercontent.com/Joomill/Socialshare/master/update.xml</server>
+		<server type="extension" priority="1" name="Joomill Social Share">https://raw.githubusercontent.com/Joomill/Socialshare/master/update.xml</server>
 	</updateservers>
 </extension>
