@@ -37,16 +37,18 @@
     padding: 2px;
 }
 
-.socialshare-buttons li a {
-    background-color: #ccc;
+.socialshare-buttons li a,
+.socialshare-buttons li > span {
     box-sizing: border-box;
     border-radius: 5px;
-    display: block;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 5px;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-weight: 700;
     height: 100%;
-    padding: 10px 12px 10px 24px;
+    padding: 7px 12px;
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -57,12 +59,8 @@
 }
 
 .socialshare-buttons li a .socialshare-icon {
-    display: block;
-    left: 9px;
-    padding-top: 7px;
-    position: absolute;
-    top: 0;
-    width: 10%;
+    display: flex;
+    align-items: center;
 }
 .socialshare-buttons li a .socialshare-icon svg {
     height: 18px;
@@ -77,8 +75,9 @@
 }
 
 .socialshare-buttons li a .socialshare-text {
+    display: flex;
+    align-items: center;
     font-size: 11px;
-    margin-left: 10px;
     color: #fff;
 }
 
@@ -162,19 +161,6 @@
 
 /* Smartphones and Tablets */
 @media (max-width: 767px) {
-    .socialshare-buttons li {
-        width: 42px !important;
-    }
-
-    .socialshare-buttons li a .socialshare-text {
-        visibility: hidden;
-    }
-
-    .socialshare-buttons li a .socialshare-icon {
-        width: 17px;
-        height: 17px
-    }
-
     .sticky-share {
         position: fixed;
         bottom: 0;

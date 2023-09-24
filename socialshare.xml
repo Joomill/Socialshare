@@ -7,7 +7,7 @@
 	<authorUrl>https://www.joomill.nl</authorUrl>
 	<copyright>Copyright (C) 2023 joomill. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<description>PLG_CONTENT_SOCIALSHARE_XML_DESCRIPTION</description>
 
 	<!-- Scripts to run on installation -->
@@ -27,28 +27,54 @@
 		<folder>css</folder>
 	</media>
 
-	<!-- Languages -->
-	<languages folder="language">
-		<language tag="en-GB">en-GB/plg_content_socialshare.ini</language>
-		<language tag="en-GB">en-GB/plg_content_socialshare.sys.ini</language>
-	</languages>
-
 	<!-- Configuration / Parameters -->
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
 				<field
-						name="displayPlatformname"
-						type="radio"
-						label="PLG_CONTENT_SOCIALSHARE_PLATFORMNAME_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_PLATFORMNAME_DESC"
-						class="btn-group btn-group-yesno"
-						default="0"
+						name="displayPlatformIcon"
+						type="list"
+						label="PLG_CONTENT_SOCIALSHARE_PLATFORMICON_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_PLATFORMICON_DESC"
+						default="d-flex"
 
 				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
+					<option value="d-flex">Show Always</option>
+					<option value="d-none">Hide Always</option>
+					<option value="d-none d-sm-flex">Hide XS (﹤576px)</option>
+					<option value="d-none d-md-flex">Hide SM and lower (﹤768px)</option>
+					<option value="d-none d-lg-flex">Hide MD and lower (﹤992px)</option>
+					<option value="d-none d-xl-flex">Hide LG and lower (﹤1200px)</option>
+					<option value="d-flex d-xl-none">Show LG and lower (﹤1200px)</option>
+					<option value="d-flex d-lg-none">Show MD and lower (﹤992px)</option>
+					<option value="d-flex d-md-none">Show SM and lower (﹤768px)</option>
 				</field>
+				<field
+						name="displayPlatformName"
+						type="list"
+						label="PLG_CONTENT_SOCIALSHARE_PLATFORMNAME_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_PLATFORMNAME_DESC"
+						default="d-none d-md-flex"
+
+				>
+					<option value="d-flex">Show Always</option>
+					<option value="d-none">Hide Always</option>
+					<option value="d-none d-sm-flex">Hide XS (﹤576px)</option>
+					<option value="d-none d-md-flex">Hide SM and lower (﹤768px)</option>
+					<option value="d-none d-lg-flex">Hide MD and lower (﹤992px)</option>
+					<option value="d-none d-xl-flex">Hide LG and lower (﹤1200px)</option>
+					<option value="d-flex d-xl-none">Show LG and lower (﹤1200px)</option>
+					<option value="d-flex d-lg-none">Show MD and lower (﹤992px)</option>
+					<option value="d-flex d-md-none">Show SM and lower (﹤768px)</option>
+				</field>
+				<field
+						name="prefixPlatformName"
+						type="text"
+						label="PLG_CONTENT_SOCIALSHARE_PREFIXPLATFORMNAME_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_PREFIXPLATFORMNAME_DESC"
+						default=""
+						showon="displayPlatformName!:d-none"
+				/>
 				<field
 						name="displayCategories"
 						type="category"
@@ -60,14 +86,14 @@
 				/>
 				<field
 						name="displayPosition"
-						type="radio"
-						class="btn-group btn-group-yesno"
+						type="list"
 						default="bottom"
 						label="PLG_CONTENT_SOCIALSHARE_POSITION_LABEL"
 						description="PLG_CONTENT_SOCIALSHARE_POSITION_DESC"
 				>
 					<option value="top">PLG_CONTENT_SOCIALSHARE_POSITION_OPTION_TOP</option>
 					<option value="bottom">PLG_CONTENT_SOCIALSHARE_POSITION_OPTION_BOTTOM</option>
+					<option value="both">PLG_CONTENT_SOCIALSHARE_POSITION_OPTION_BOTH</option>
 				</field>
 				<field
 						name="stickyShare"
@@ -124,6 +150,17 @@
 				>
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
+				</field>
+				<field
+						name="target"
+						type="radio"
+						label="PLG_CONTENT_SOCIALSHARE_TARGET_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_TARGET_DESC"
+						class="btn-group btn-group-yesno"
+						default="_blank"
+				>
+					<option value="_blank">PLG_CONTENT_SOCIALSHARE_TARGET_BLANK</option>
+					<option value="_self">PLG_CONTENT_SOCIALSHARE_TARGET_SELF</option>
 				</field>
 			</fieldset>
 			<fieldset name="platforms">

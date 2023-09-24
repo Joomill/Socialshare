@@ -60,7 +60,9 @@ class PlgContentsocialshare extends CMSPlugin
 		 */
 
 		// Set the parameters
-		$displayPlatformname= $this->params->get('displayPlatformname', '1');
+		$displayPlatformName= $this->params->get('displayPlatformName', '1');
+        $prefixPlatformName = $this->params->get('prefixPlatformName', '');
+		$displayPlatformIcon= $this->params->get('displayPlatformIcon', '1');
 		$displayEmail       = $this->params->get('displayEmail', '1');
 		$displayFacebook    = $this->params->get('displayFacebook', '1');
 		$displayTwitter     = $this->params->get('displayTwitter', '1');
@@ -75,6 +77,7 @@ class PlgContentsocialshare extends CMSPlugin
 		$displayTrello      = $this->params->get('displayTrello', '1');
 		$selectedCategories = $this->params->def('displayCategories', '');
 		$position           = $this->params->def('displayPosition', 'top');
+        $target             = $this->params->def('target', '_blank');
 		$stickyShare        = $this->params->get('stickyShare', '');
 		$view               = $this->app->input->getCmd('view', '');
 
@@ -173,6 +176,9 @@ class PlgContentsocialshare extends CMSPlugin
         } elseif ($position == 'bottom') {
             $article->introtext .= $output;
             $article->text .= $output;
+        } elseif ($position == 'both') {
+            $article->introtext = $output . $article->introtext . $output;
+            $article->text = $output . $article->text . $output;
         }
 
 		return;
