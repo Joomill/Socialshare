@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.9" type="plugin" group="content" method="upgrade">
 	<name>PLG_CONTENT_SOCIALSHARE</name>
-	<creationDate>01-09-2023</creationDate>
+	<creationDate>october 2023</creationDate>
 	<author>Joomill</author>
-	<authorEmail>info@joomill.nl</authorEmail>
-	<authorUrl>https://www.joomill.nl</authorUrl>
-	<copyright>Copyright (C) 2023 joomill. All rights reserved.</copyright>
+	<authorEmail>info@joomill-extensions.com</authorEmail>
+	<authorUrl>https://www.joomill-extensions.com</authorUrl>
+	<copyright>Copyright (C) 2023 Joomill Extensions. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.1.0</version>
+	<version>1.1.1</version>
 	<description>PLG_CONTENT_SOCIALSHARE_XML_DESCRIPTION</description>
 
 	<!-- Scripts to run on installation -->
@@ -302,7 +302,7 @@
 			</fieldset>
 		</fields>
 	</config>
-	<updateservers>
-		<server type="extension" priority="1" name="Joomill Social Share">https://raw.githubusercontent.com/Joomill/Socialshare/master/update.xml</server>
-	</updateservers>
+    <changelogurl><![CDATA[https://www.joomill-extensions.com/index.php?option=com_ochsubscriptions&amp;view=changelog&amp;format=xml&amp;cat=17]]></changelogurl>
+
+    <updateservers><server type="extension" name="Joomill Social Share buttons"><![CDATA[https://www.joomill-extensions.com/index.php?option=com_ochsubscriptions&amp;view=updater&amp;format=xml&amp;cat=17]]></server></updateservers>
 </extension>
