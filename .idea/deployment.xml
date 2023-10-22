@@ -7,7 +7,7 @@
         <serverdata>
           <mappings>
             <mapping deploy="/plugins/content/socialshare" local="$PROJECT_DIR$" web="/" />
-            <mapping deploy="/media/plg_content_socialshare/css" local="$PROJECT_DIR$/media/css" />
+            <mapping deploy="/media/plg_content_socialshare/css" local="$PROJECT_DIR$/media/css" web="/" />
           </mappings>
         </serverdata>
       </paths>
