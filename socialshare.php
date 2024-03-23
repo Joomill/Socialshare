@@ -171,13 +171,19 @@ class PlgContentsocialshare extends CMSPlugin
         }
 
         if ($position == 'top') {
-            $article->introtext = $output . $article->introtext;
+            if ($view != 'article') {
+                $article->introtext = $output . $article->introtext;
+            }
             $article->text = $output . $article->text;
         } elseif ($position == 'bottom') {
-            $article->introtext .= $output;
+            if ($view != 'article') {
+                $article->introtext .= $output;
+            }
             $article->text .= $output;
         } elseif ($position == 'both') {
-            $article->introtext = $output . $article->introtext . $output;
+            if ($view != 'article') {
+                $article->introtext = $output . $article->introtext . $output;
+            }
             $article->text = $output . $article->text . $output;
         }
 

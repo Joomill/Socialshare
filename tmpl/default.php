@@ -20,7 +20,7 @@ HTMLHelper::_('stylesheet', 'plg_content_socialshare/socialshare.css', ['version
 $isMobile = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
 ?>
 
-<div class="share-container <?php echo $stickyShare; ?>">
+<div class="share-container <?php if ($view == 'article') { echo $stickyShare; } ?>">
 	<ul class="socialshare-buttons clearfix">
 		<?php if ($displayFacebook) : ?>
 			<li class="socialshare-facebook">

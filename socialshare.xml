@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.9" type="plugin" group="content" method="upgrade">
 	<name>PLG_CONTENT_SOCIALSHARE</name>
-	<creationDate>october 2023</creationDate>
+	<creationDate>January 2024</creationDate>
 	<author>Joomill</author>
 	<authorEmail>info@joomill-extensions.com</authorEmail>
 	<authorUrl>https://www.joomill-extensions.com</authorUrl>
 	<copyright>Copyright (C) 2023 Joomill Extensions. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.2.0</version>
+	<version>1.3.0</version>
 	<description>PLG_CONTENT_SOCIALSHARE_XML_DESCRIPTION</description>
 
 	<!-- Scripts to run on installation -->
