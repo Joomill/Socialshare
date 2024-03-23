@@ -67,6 +67,7 @@ class PlgContentsocialshare extends CMSPlugin
 		$displayFacebook    = $this->params->get('displayFacebook', '1');
 		$displayTwitter     = $this->params->get('displayTwitter', '1');
 		$displayLinkedin    = $this->params->get('displayLinkedin', '1');
+        $displayThreads     = $this->params->get('displayThreads', '1');
 		$displayPinterest   = $this->params->get('displayPinterest', '1');
 		$displayReddit      = $this->params->get('displayReddit', '1');
 		$displayTumblr      = $this->params->get('displayTumblr', '1');

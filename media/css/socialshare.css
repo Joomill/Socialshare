@@ -104,6 +104,12 @@
 .socialshare-buttons li.socialshare-twitter a:hover {
     background-color: #222222;
 }
+.socialshare-buttons li.socialshare-threads a {
+    background-color: #000000;
+}
+.socialshare-buttons li.socialshare-threads a:hover {
+    background-color: #222222;
+}
 .socialshare-buttons li.socialshare-pinterest a {
     background-color: #e60023;
 }
