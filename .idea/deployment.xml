@@ -1,31 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="DEMO Online" remoteFilesAllowedToDisappearOnAutoupload="false" confirmBeforeUploading="false">
+  <component name="PublishConfigData" autoUpload="Always" serverName="extensions.joomill.dev" remoteFilesAllowedToDisappearOnAutoupload="false" confirmBeforeUploading="false" showAutoUploadSettingsWarning="false">
     <option name="confirmBeforeUploading" value="false" />
     <serverData>
-      <paths name="DEMO Online">
+      <paths name="extensions.joomill.dev">
         <serverdata>
           <mappings>
             <mapping deploy="/plugins/content/socialshare" local="$PROJECT_DIR$" web="/" />
-            <mapping deploy="/media/plg_content_socialshare/css" local="$PROJECT_DIR$/media/css" web="/" />
+            <mapping deploy="/media/plg_content_socialshare" local="$PROJECT_DIR$/media" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="DEV Local">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="DEV Online">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="Office Joomill">
+      <paths name="wilbert DEV">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
