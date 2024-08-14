@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.9" type="plugin" group="content" method="upgrade">
 	<name>PLG_CONTENT_SOCIALSHARE</name>
-	<creationDate>March 2024</creationDate>
+	<creationDate>August 2024</creationDate>
 	<author>Joomill</author>
 	<authorEmail>info@joomill-extensions.com</authorEmail>
 	<authorUrl>https://www.joomill-extensions.com</authorUrl>
-	<copyright>Copyright (C) 2023 Joomill Extensions. All rights reserved.</copyright>
+	<copyright>Copyright (C) 2024 Joomill Extensions. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.4.0</version>
+	<version>1.5.0</version>
 	<description>PLG_CONTENT_SOCIALSHARE_XML_DESCRIPTION</description>
 
 	<!-- Scripts to run on installation -->
@@ -37,17 +37,16 @@
 						label="PLG_CONTENT_SOCIALSHARE_PLATFORMICON_LABEL"
 						description="PLG_CONTENT_SOCIALSHARE_PLATFORMICON_DESC"
 						default="d-flex"
-
 				>
-					<option value="d-flex">Show Always</option>
-					<option value="d-none">Hide Always</option>
-					<option value="d-none d-sm-flex">Hide XS (﹤576px)</option>
-					<option value="d-none d-md-flex">Hide SM and lower (﹤768px)</option>
-					<option value="d-none d-lg-flex">Hide MD and lower (﹤992px)</option>
-					<option value="d-none d-xl-flex">Hide LG and lower (﹤1200px)</option>
-					<option value="d-flex d-xl-none">Show LG and lower (﹤1200px)</option>
-					<option value="d-flex d-lg-none">Show MD and lower (﹤992px)</option>
-					<option value="d-flex d-md-none">Show SM and lower (﹤768px)</option>
+					<option value="d-flex uk-visible">Show Always</option>
+					<option value="d-none uk-hidden uk-hidden">Hide Always</option>
+					<option value="d-none d-sm-flex uk-visible@s">Hide XS (﹤576px)</option>
+					<option value="d-none d-md-flex uk-visible@m">Hide SM and lower (﹤768px)</option>
+					<option value="d-none d-lg-flex uk-visible@l">Hide MD and lower (﹤992px)</option>
+					<option value="d-none d-xl-flex uk-visible@xl">Hide LG and lower (﹤1200px)</option>
+					<option value="d-flex d-xl-none uk-hidden@l">Show LG and lower (﹤1200px)</option>
+					<option value="d-flex d-lg-none uk-hidden@m">Show MD and lower (﹤992px)</option>
+					<option value="d-flex d-md-none uk-hidden@s">Show SM and lower (﹤768px)</option>
 				</field>
 				<field
 						name="displayPlatformName"
@@ -57,15 +56,15 @@
 						default="d-none d-md-flex"
 
 				>
-					<option value="d-flex">Show Always</option>
-					<option value="d-none">Hide Always</option>
-					<option value="d-none d-sm-flex">Hide XS (﹤576px)</option>
-					<option value="d-none d-md-flex">Hide SM and lower (﹤768px)</option>
-					<option value="d-none d-lg-flex">Hide MD and lower (﹤992px)</option>
-					<option value="d-none d-xl-flex">Hide LG and lower (﹤1200px)</option>
-					<option value="d-flex d-xl-none">Show LG and lower (﹤1200px)</option>
-					<option value="d-flex d-lg-none">Show MD and lower (﹤992px)</option>
-					<option value="d-flex d-md-none">Show SM and lower (﹤768px)</option>
+					<option value="d-flex uk-visible">Show Always</option>
+					<option value="d-none uk-hidden uk-hidden">Hide Always</option>
+					<option value="d-none d-sm-flex uk-visible@s">Hide XS (﹤576px)</option>
+					<option value="d-none d-md-flex uk-visible@m">Hide SM and lower (﹤768px)</option>
+					<option value="d-none d-lg-flex uk-visible@l">Hide MD and lower (﹤992px)</option>
+					<option value="d-none d-xl-flex uk-visible@xl">Hide LG and lower (﹤1200px)</option>
+					<option value="d-flex d-xl-none uk-hidden@l">Show LG and lower (﹤1200px)</option>
+					<option value="d-flex d-lg-none uk-hidden@m">Show MD and lower (﹤992px)</option>
+					<option value="d-flex d-md-none uk-hidden@s">Show SM and lower (﹤768px)</option>
 				</field>
 				<field
 						name="prefixPlatformName"
@@ -205,6 +204,17 @@
 					description="PLG_CONTENT_SOCIALSHARE_THREADS_DESC"
 					class="btn-group btn-group-yesno"
 					default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+						name="displayMastodon"
+						type="radio"
+						label="PLG_CONTENT_SOCIALSHARE_MASTODON_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_MASTODON_DESC"
+						class="btn-group btn-group-yesno"
+						default="0"
 				>
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
