@@ -35,3 +35,4 @@ use Joomla\CMS\Language\Text;
             <?php endif; ?>
         <?php endforeach; ?>
     </ul>
+</div>
