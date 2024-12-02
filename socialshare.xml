@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.9" type="plugin" group="content" method="upgrade">
 	<name>PLG_CONTENT_SOCIALSHARE</name>
-	<creationDate>August 2024</creationDate>
+	<creationDate>December 2024</creationDate>
 	<author>Joomill</author>
 	<authorEmail>info@joomill-extensions.com</authorEmail>
 	<authorUrl>https://www.joomill-extensions.com</authorUrl>
 	<copyright>Copyright (C) 2024 Joomill Extensions. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.5.1</version>
+	<version>1.6.0</version>
 	<description>PLG_CONTENT_SOCIALSHARE_XML_DESCRIPTION</description>
 
 	<!-- Scripts to run on installation -->
@@ -213,6 +213,17 @@
 						type="radio"
 						label="PLG_CONTENT_SOCIALSHARE_MASTODON_LABEL"
 						description="PLG_CONTENT_SOCIALSHARE_MASTODON_DESC"
+						class="btn-group btn-group-yesno"
+						default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+						name="displayBluesky"
+						type="radio"
+						label="PLG_CONTENT_SOCIALSHARE_BLUESKY_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_BLUESKY_DESC"
 						class="btn-group btn-group-yesno"
 						default="0"
 				>

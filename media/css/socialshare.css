@@ -116,6 +116,12 @@
 .socialshare-buttons li.socialshare-mastodon a:hover {
     background-color: #563ACC;
 }
+.socialshare-buttons li.socialshare-bluesky a {
+    background-color: #0085ff;
+}
+.socialshare-buttons li.socialshare-bluesky a:hover {
+    background-color: #208bfe;
+}
 .socialshare-buttons li.socialshare-pinterest a {
     background-color: #e60023;
 }
