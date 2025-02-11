@@ -1,7 +1,7 @@
 <?php
 /*
  *  package: Joomill - Social Share
- *  copyright: Copyright (c) 2023. Jeroen Moolenschot | Joomill
+ *  copyright: Copyright (c) 2025. Jeroen Moolenschot | Joomill
  *  license: GNU General Public License version 2 or later
  *  link: https://www.joomill-extensions.com
  */
@@ -74,6 +74,12 @@ class PlgContentsocialshare extends CMSPlugin
         $target             = $this->params->def('target', '_blank');
 		$stickyShare        = $this->params->get('stickyShare', '');
 		$view               = $this->app->input->getCmd('view', '');
+
+		$yoothemeBackground = $this->params->get('yoothemeBackground', '');
+		$yoothemeTextColor  = $this->params->get('yoothemeTextColor', '');
+		$yoothemeStyle      = $this->params->get('yoothemeStyle', 'uk-icon');
+		$yoothemeAlign      = $this->params->get('yoothemeAlign', 'left');
+		$yoothemePrefix     = $this->params->get('yoothemePrefix', '');
 
 		// Check whether we're displaying the plugin in the current view
 		if ($this->params->get('view' . ucfirst($view), '1') == '0')
@@ -292,7 +298,7 @@ class PlgContentsocialshare extends CMSPlugin
 
 		// Load the layout
 		ob_start();
-		$template = PluginHelper::getLayoutPath('content', 'socialshare');
+		$template = PluginHelper::getLayoutPath('content', 'socialshare', $this->params->get('layout', 'default'));
 		include $template;
 		$output = ob_get_clean();
 
