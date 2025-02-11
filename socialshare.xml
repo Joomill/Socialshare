@@ -32,49 +32,6 @@
 		<fields name="params">
 			<fieldset name="basic">
 				<field
-						name="displayPlatformIcon"
-						type="list"
-						label="PLG_CONTENT_SOCIALSHARE_PLATFORMICON_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_PLATFORMICON_DESC"
-						default="d-flex"
-				>
-					<option value="d-flex uk-visible">Show Always</option>
-					<option value="d-none uk-hidden uk-hidden">Hide Always</option>
-					<option value="d-none d-sm-flex uk-visible@s">Hide XS (﹤576px)</option>
-					<option value="d-none d-md-flex uk-visible@m">Hide SM and lower (﹤768px)</option>
-					<option value="d-none d-lg-flex uk-visible@l">Hide MD and lower (﹤992px)</option>
-					<option value="d-none d-xl-flex uk-visible@xl">Hide LG and lower (﹤1200px)</option>
-					<option value="d-flex d-xl-none uk-hidden@l">Show LG and lower (﹤1200px)</option>
-					<option value="d-flex d-lg-none uk-hidden@m">Show MD and lower (﹤992px)</option>
-					<option value="d-flex d-md-none uk-hidden@s">Show SM and lower (﹤768px)</option>
-				</field>
-				<field
-						name="displayPlatformName"
-						type="list"
-						label="PLG_CONTENT_SOCIALSHARE_PLATFORMNAME_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_PLATFORMNAME_DESC"
-						default="d-none d-md-flex"
-
-				>
-					<option value="d-flex uk-visible">Show Always</option>
-					<option value="d-none uk-hidden uk-hidden">Hide Always</option>
-					<option value="d-none d-sm-flex uk-visible@s">Hide XS (﹤576px)</option>
-					<option value="d-none d-md-flex uk-visible@m">Hide SM and lower (﹤768px)</option>
-					<option value="d-none d-lg-flex uk-visible@l">Hide MD and lower (﹤992px)</option>
-					<option value="d-none d-xl-flex uk-visible@xl">Hide LG and lower (﹤1200px)</option>
-					<option value="d-flex d-xl-none uk-hidden@l">Show LG and lower (﹤1200px)</option>
-					<option value="d-flex d-lg-none uk-hidden@m">Show MD and lower (﹤992px)</option>
-					<option value="d-flex d-md-none uk-hidden@s">Show SM and lower (﹤768px)</option>
-				</field>
-				<field
-						name="prefixPlatformName"
-						type="text"
-						label="PLG_CONTENT_SOCIALSHARE_PREFIXPLATFORMNAME_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_PREFIXPLATFORMNAME_DESC"
-						default=""
-						showon="displayPlatformName!:d-none"
-				/>
-				<field
 						name="displayCategories"
 						type="category"
 						label="PLG_CONTENT_SOCIALSHARE_CATEGORIES_LABEL"
@@ -93,18 +50,6 @@
 					<option value="top">PLG_CONTENT_SOCIALSHARE_POSITION_OPTION_TOP</option>
 					<option value="bottom">PLG_CONTENT_SOCIALSHARE_POSITION_OPTION_BOTTOM</option>
 					<option value="both">PLG_CONTENT_SOCIALSHARE_POSITION_OPTION_BOTH</option>
-				</field>
-				<field
-						name="stickyShare"
-						type="radio"
-						label="PLG_CONTENT_SOCIALSHARE_STICKY_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_STICKY_DESC"
-						class="btn-group btn-group-yesno"
-						default=""
-
-				>
-					<option value="">JNO</option>
-					<option value="sticky-share">JYES</option>
 				</field>
 				<field
 						name="viewCategory"
@@ -160,6 +105,152 @@
 				>
 					<option value="_blank">PLG_CONTENT_SOCIALSHARE_TARGET_BLANK</option>
 					<option value="_self">PLG_CONTENT_SOCIALSHARE_TARGET_SELF</option>
+				</field>
+			</fieldset>
+			<fieldset name="layout">
+				<field
+						name="layout"
+						type="filelist"
+						default="default.php"
+						label="PLG_CONTENT_SOCIALSHARE_SELECT_LAYOUT_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_SELECT_LAYOUT_DESC"
+						directory="plugins/content/socialshare/tmpl"
+						filter=""
+						exclude="\.html$"
+						stripext="1"
+						hide_none="1"
+						hide_default="1"
+				/>
+
+				<field
+						name="noteDefault"
+						type="note"
+						class="alert alert-info"
+						description="LAYOUT_DEFAULT_DESC"
+						showon="layout:default"
+				/>
+				<field
+						name="noteYootheme"
+						type="note"
+						class="alert alert-info"
+						description="LAYOUT_YOOTHEME_DESC"
+						showon="layout:yootheme"
+				/>
+
+				<field
+						name="displayPlatformIcon"
+						type="list"
+						label="PLG_CONTENT_SOCIALSHARE_PLATFORMICON_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_PLATFORMICON_DESC"
+						default="d-flex"
+						showon="layout:default"
+				>
+					<option value="d-flex uk-visible">Show Always</option>
+					<option value="d-none uk-hidden uk-hidden">Hide Always</option>
+					<option value="d-none d-sm-flex uk-visible@s">Hide XS (﹤576px)</option>
+					<option value="d-none d-md-flex uk-visible@m">Hide SM and lower (﹤768px)</option>
+					<option value="d-none d-lg-flex uk-visible@l">Hide MD and lower (﹤992px)</option>
+					<option value="d-none d-xl-flex uk-visible@xl">Hide LG and lower (﹤1200px)</option>
+					<option value="d-flex d-xl-none uk-hidden@l">Show LG and lower (﹤1200px)</option>
+					<option value="d-flex d-lg-none uk-hidden@m">Show MD and lower (﹤992px)</option>
+					<option value="d-flex d-md-none uk-hidden@s">Show SM and lower (﹤768px)</option>
+				</field>
+				<field
+						name="displayPlatformName"
+						type="list"
+						label="PLG_CONTENT_SOCIALSHARE_PLATFORMNAME_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_PLATFORMNAME_DESC"
+						default="d-none d-md-flex"
+						showon="layout:default"
+				>
+					<option value="d-flex uk-visible">Show Always</option>
+					<option value="d-none uk-hidden uk-hidden">Hide Always</option>
+					<option value="d-none d-sm-flex uk-visible@s">Hide XS (﹤576px)</option>
+					<option value="d-none d-md-flex uk-visible@m">Hide SM and lower (﹤768px)</option>
+					<option value="d-none d-lg-flex uk-visible@l">Hide MD and lower (﹤992px)</option>
+					<option value="d-none d-xl-flex uk-visible@xl">Hide LG and lower (﹤1200px)</option>
+					<option value="d-flex d-xl-none uk-hidden@l">Show LG and lower (﹤1200px)</option>
+					<option value="d-flex d-lg-none uk-hidden@m">Show MD and lower (﹤992px)</option>
+					<option value="d-flex d-md-none uk-hidden@s">Show SM and lower (﹤768px)</option>
+				</field>
+				<field
+						name="prefixPlatformName"
+						type="text"
+						label="PLG_CONTENT_SOCIALSHARE_PREFIXPLATFORMNAME_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_PREFIXPLATFORMNAME_DESC"
+						default=""
+						showon="layout:default[AND]displayPlatformName!:d-none"
+				/>
+
+				<field
+						name="yoothemeBackground"
+						type="list"
+						label="PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_DESC"
+						default=""
+						showon="layout:yootheme"
+				>
+					<option value="">PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_NONE</option>
+					<option value="uk-background-default">PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_DEFAULT</option>
+					<option value="uk-background-muted">PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_MUTED</option>
+					<option value="uk-background-primary">PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_PRIMARY</option>
+					<option value="uk-background-secondary">PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_SECONDARY</option>
+				</field>
+				<field
+						name="yoothemeTextColor"
+						type="list"
+						label="PLG_CONTENT_SOCIALSHARE_YOOTHEME_TEXTCOLOR_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_YOOTHEME_TEXTCOLOR_DESC"
+						default=""
+						showon="layout:yootheme"
+				>
+					<option value="">PLG_CONTENT_SOCIALSHARE_YOOTHEME_TEXTCOLOR_INHERIT</option>
+					<option value="uk-light">PLG_CONTENT_SOCIALSHARE_YOOTHEME_TEXTCOLOR_LIGHT</option>
+					<option value="uk-dark">PLG_CONTENT_SOCIALSHARE_YOOTHEME_TEXTCOLOR_DARK</option>
+				</field>
+				<field
+						name="yoothemeStyle"
+						type="list"
+						label="PLG_CONTENT_SOCIALSHARE_YOOTHEME_STYLE_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_YOOTHEME_STYLE_DESC"
+						default="uk-icon-link"
+						showon="layout:yootheme"
+				>
+					<option value="uk-icon">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ICON</option>
+					<option value="uk-icon-link">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ICON_LINK</option>
+					<option value="uk-icon-button">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ICON_BUTTON</option>
+				</field>
+				<field
+						name="yoothemeAlign"
+						type="list"
+						label="PLG_CONTENT_SOCIALSHARE_YOOTHEME_ALIGN_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_YOOTHEME_ALIGN_DESC"
+						default="center"
+						showon="layout:yootheme"
+				>
+					<option value="uk-text-left">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ALIGN_LEFT</option>
+					<option value="uk-text-center">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ALIGN_CENTER</option>
+					<option value="uk-text-right">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ALIGN_RIGHT</option>
+				</field>
+				<field
+						name="yoothemePrefix"
+						type="text"
+						label="PLG_CONTENT_SOCIALSHARE_YOOTHEME_PREFIX_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_YOOTHEME_PREFIX_DESC"
+						default=""
+						showon="layout:yootheme"
+				/>
+				<field
+						name="stickyShare"
+						type="radio"
+						label="PLG_CONTENT_SOCIALSHARE_STICKY_LABEL"
+						description="PLG_CONTENT_SOCIALSHARE_STICKY_DESC"
+						class="btn-group btn-group-yesno"
+						default=""
+
+				>
+					<option value="">JNO</option>
+					<option value="sticky-share">JYES</option>
 				</field>
 			</fieldset>
 			<fieldset name="platforms">
