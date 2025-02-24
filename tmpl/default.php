@@ -13,9 +13,6 @@ use Joomla\CMS\Language\Text;
 
 <div class="share-container <?php if ($view == 'article') { echo $stickyShare; } ?>">
     <ul class="socialshare-buttons clearfix">
-        <li class="socialshare-mobileprefix">
-            <span class="socialshare-text"><?php echo Text::_($prefixPlatformName); ?></span>
-        </li>
         <?php foreach ($socialPlatforms as $platform => $data): ?>
             <?php if ($data['enabled']): ?>
                 <li class="socialshare-<?php echo $platform; ?>">
