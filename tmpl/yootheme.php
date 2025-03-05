@@ -13,7 +13,7 @@ use Joomla\CMS\Language\Text;
 ?>
 
     <div class="socialshare-uikit-container uk-padding-small <?php echo ($view == 'article') ? $stickyShare : ''; ?> <?php echo $yoothemeBackground; ?> <?php echo $yoothemeTextColor; ?> <?php echo $yoothemeAlign; ?>">
-        <span class="socialshare-uikit-text"><?php echo $yoothemePrefix; ?></span>
+        <span class="socialshare-uikit-text"><?php echo Text::_($yoothemePrefix); ?></span>
         <ul class="socialshare-uikit uk-child-width-auto uk-grid-small uk-flex-inline uk-flex-middle uk-grid">
 			<?php foreach ($socialPlatforms as $platform => $data): ?>
 				<?php if ($data['enabled']): ?>
