@@ -6,8 +6,12 @@
  *  link: https://www.joomill-extensions.com
  */
 
-defined('_JEXEC') or die;
+namespace Joomill\Plugin\Content\Socialshare\Extension;
 
+// No direct access.
+\defined('_JEXEC') or die;
+
+use Joomla\Component\Content\Site\Helper\RouteHelper;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Plugin\PluginHelper;
@@ -16,13 +20,11 @@ use Joomla\CMS\Table\Category;
 use Joomla\CMS\Table\Table;
 use Joomla\CMS\Uri\Uri;
 
-// We require com_content's route helper
-JLoader::registerAlias('ContentHelperRoute', '\\Joomla\\Component\\Content\\Site\\Helper\\RouteHelper', '5.0');
 
 // Import media
 HTMLHelper::_('stylesheet', 'plg_content_socialshare/socialshare.css', ['version' => 'auto', 'relative' => true]);
 
-class PlgContentsocialshare extends CMSPlugin
+class Socialshare extends CMSPlugin
 {
 	private static $hasProcessedCategory = false;
 	protected $app;
@@ -148,7 +150,7 @@ class PlgContentsocialshare extends CMSPlugin
 
 		// Build the URL for the plugins to use - the site URL should only be the scheme and host segments, Route will take care of the rest
 		$siteURL = Uri::getInstance()->toString(['scheme', 'host', 'port']);
-		$itemURL = $siteURL . Route::_(ContentHelperRoute::getArticleRoute($article->slug, $article->catid));
+		$itemURL = $siteURL . Route::_(RouteHelper::getArticleRoute($article->slug, $article->catid));
 
 
 		$socialPlatforms = [
@@ -439,9 +441,9 @@ class PlgContentsocialshare extends CMSPlugin
 		$category = Table::getInstance('Category');
 		$category->load($this->app->input->getUint('id'));
 
-		// Build the URL for the plugins to use - the site URL should only be the scheme and host segments, JRoute will take care of the rest
+		// Build the URL for the plugins to use - the site URL should only be the scheme and host segments, Route will take care of the rest
 		$siteURL = Uri::getInstance()->toString(['scheme', 'host', 'port']);
-		$itemURL = $siteURL . Route::_(ContentHelperRoute::getCategoryRoute($category->id));
+		$itemURL = $siteURL . Route::_(RouteHelper::getCategoryRoute($category->id));
 
 		$description = !empty($category->metadesc) ? $category->metadesc : strip_tags($category->description);
 

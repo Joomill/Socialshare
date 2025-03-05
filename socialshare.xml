@@ -12,11 +12,12 @@
     <namespace path="src">Joomill\Plugin\Content\Socialshare</namespace>
 
     <files>
-        <filename plugin="socialshare">socialshare.php</filename>
-        <filename>script.php</filename>
-        <folder>language</folder>
-        <folder>media</folder>
+		<folder>language</folder>
+		<folder>media</folder>
+		<folder plugin="socialshare">services</folder>
+		<folder>src</folder>
         <folder>tmpl</folder>
+		<filename>script.php</filename>
     </files>
 
     <media destination="plg_content_socialshare" folder="media">
