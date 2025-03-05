@@ -8,10 +8,7 @@
 
 defined('_JEXEC') or die;
 
-use Joomla\CMS\Application\CMSApplication;
 use Joomla\CMS\HTML\HTMLHelper;
-use Joomla\CMS\Http\HttpFactory;
-use Joomla\CMS\Image\Image;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\CMS\Router\Route;
