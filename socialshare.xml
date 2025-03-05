@@ -1,435 +1,435 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="plugin" group="content" method="upgrade">
-	<name>PLG_CONTENT_SOCIALSHARE</name>
-	<description>PLG_CONTENT_SOCIALSHARE_XML_DESCRIPTION</description>
-	<author>Jeroen Moolenschot | Joomill</author>
-	<authorEmail>info@joomill-extensions.com</authorEmail>
-	<authorUrl>https://www.joomill-extensions.com</authorUrl>
-	<license>GNU General Public License version 3 or later</license>
-	<creationDate>March 2025</creationDate>
-	<copyright>Copyright (c) 2025 Joomill Extensions. All rights reserved.</copyright>
-	<version>2.0.1</version>
-	<namespace path="src">Joomill\Plugin\Fields\Qrcode</namespace>
+    <name>PLG_CONTENT_SOCIALSHARE</name>
+    <description>PLG_CONTENT_SOCIALSHARE_XML_DESCRIPTION</description>
+    <author>Jeroen Moolenschot | Joomill</author>
+    <authorEmail>info@joomill-extensions.com</authorEmail>
+    <authorUrl>https://www.joomill-extensions.com</authorUrl>
+    <license>GNU General Public License version 3 or later</license>
+    <creationDate>March 2025</creationDate>
+    <copyright>Copyright (c) 2025 Joomill Extensions. All rights reserved.</copyright>
+    <version>2.0.1</version>
+    <namespace path="src">Joomill\Plugin\Fields\Qrcode</namespace>
 
-	<files>
-		<filename plugin="socialshare">socialshare.php</filename>
-		<filename>script.php</filename>
+    <files>
+        <filename plugin="socialshare">socialshare.php</filename>
+        <filename>script.php</filename>
         <folder>language</folder>
         <folder>media</folder>
-		<folder>tmpl</folder>
-	</files>
+        <folder>tmpl</folder>
+    </files>
 
-	<media destination="plg_content_socialshare" folder="media">
-		<folder>css</folder>
-	</media>
+    <media destination="plg_content_socialshare" folder="media">
+        <folder>css</folder>
+    </media>
 
-	<config>
-		<fields name="params">
-			<fieldset name="basic">
-				<field
-						name="displayCategories"
-						type="category"
-						label="PLG_CONTENT_SOCIALSHARE_CATEGORIES_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_CATEGORIES_DESC"
-						extension="com_content"
-						multiple="true"
-						size="10"
-				/>
-				<field
-						name="displayPosition"
-						type="list"
-						default="bottom"
-						label="PLG_CONTENT_SOCIALSHARE_POSITION_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_POSITION_DESC"
-				>
-					<option value="top">PLG_CONTENT_SOCIALSHARE_POSITION_OPTION_TOP</option>
-					<option value="bottom">PLG_CONTENT_SOCIALSHARE_POSITION_OPTION_BOTTOM</option>
-					<option value="both">PLG_CONTENT_SOCIALSHARE_POSITION_OPTION_BOTH</option>
-				</field>
-				<field
-						name="viewCategory"
-						type="radio"
-						label="PLG_CONTENT_SOCIALSHARE_VIEW_CATEGORY_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_VIEW_CATEGORY_DESC"
-						class="btn-group btn-group-yesno"
-						default="0"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-						name="viewArticle"
-						type="radio"
-						label="PLG_CONTENT_SOCIALSHARE_VIEW_ARTICLE_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_VIEW_ARTICLE_DESC"
-						class="btn-group btn-group-yesno"
-						default="1"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-						name="viewArchive"
-						type="radio"
-						label="PLG_CONTENT_SOCIALSHARE_VIEW_ARCHIVE_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_VIEW_ARCHIVE_DESC"
-						class="btn-group btn-group-yesno"
-						default="0"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-						name="viewFeatured"
-						type="radio"
-						label="PLG_CONTENT_SOCIALSHARE_VIEW_FEATURED_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_VIEW_FEATURED_DESC"
-						class="btn-group btn-group-yesno"
-						default="0"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-						name="target"
-						type="radio"
-						label="PLG_CONTENT_SOCIALSHARE_TARGET_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_TARGET_DESC"
-						class="btn-group btn-group-yesno"
-						default="_blank"
-				>
-					<option value="_blank">PLG_CONTENT_SOCIALSHARE_TARGET_BLANK</option>
-					<option value="_self">PLG_CONTENT_SOCIALSHARE_TARGET_SELF</option>
-				</field>
-			</fieldset>
-			<fieldset name="layout">
-				<field
-						name="layout"
-						type="filelist"
-						default="default.php"
-						label="PLG_CONTENT_SOCIALSHARE_SELECT_LAYOUT_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_SELECT_LAYOUT_DESC"
-						directory="plugins/content/socialshare/tmpl"
-						filter=""
-						exclude="\.html$"
-						stripext="1"
-						hide_none="1"
-						hide_default="1"
-				/>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                        name="displayCategories"
+                        type="category"
+                        label="PLG_CONTENT_SOCIALSHARE_CATEGORIES_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_CATEGORIES_DESC"
+                        extension="com_content"
+                        multiple="true"
+                        size="10"
+                />
+                <field
+                        name="displayPosition"
+                        type="list"
+                        default="bottom"
+                        label="PLG_CONTENT_SOCIALSHARE_POSITION_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_POSITION_DESC"
+                >
+                    <option value="top">PLG_CONTENT_SOCIALSHARE_POSITION_OPTION_TOP</option>
+                    <option value="bottom">PLG_CONTENT_SOCIALSHARE_POSITION_OPTION_BOTTOM</option>
+                    <option value="both">PLG_CONTENT_SOCIALSHARE_POSITION_OPTION_BOTH</option>
+                </field>
+                <field
+                        name="viewCategory"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_VIEW_CATEGORY_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_VIEW_CATEGORY_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="viewArticle"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_VIEW_ARTICLE_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_VIEW_ARTICLE_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="viewArchive"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_VIEW_ARCHIVE_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_VIEW_ARCHIVE_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="viewFeatured"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_VIEW_FEATURED_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_VIEW_FEATURED_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="target"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_TARGET_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_TARGET_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="_blank"
+                >
+                    <option value="_blank">PLG_CONTENT_SOCIALSHARE_TARGET_BLANK</option>
+                    <option value="_self">PLG_CONTENT_SOCIALSHARE_TARGET_SELF</option>
+                </field>
+            </fieldset>
+            <fieldset name="layout">
+                <field
+                        name="layout"
+                        type="filelist"
+                        default="default.php"
+                        label="PLG_CONTENT_SOCIALSHARE_SELECT_LAYOUT_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_SELECT_LAYOUT_DESC"
+                        directory="plugins/content/socialshare/tmpl"
+                        filter=""
+                        exclude="\.html$"
+                        stripext="1"
+                        hide_none="1"
+                        hide_default="1"
+                />
 
-				<field
-						name="noteDefault"
-						type="note"
-						class="alert alert-info"
-						description="LAYOUT_DEFAULT_DESC"
-						showon="layout:default"
-				/>
-				<field
-						name="noteYootheme"
-						type="note"
-						class="alert alert-info"
-						description="LAYOUT_YOOTHEME_DESC"
-						showon="layout:yootheme"
-				/>
+                <field
+                        name="noteDefault"
+                        type="note"
+                        class="alert alert-info"
+                        description="LAYOUT_DEFAULT_DESC"
+                        showon="layout:default"
+                />
+                <field
+                        name="noteYootheme"
+                        type="note"
+                        class="alert alert-info"
+                        description="LAYOUT_YOOTHEME_DESC"
+                        showon="layout:yootheme"
+                />
 
-				<field
-						name="displayPlatformIcon"
-						type="list"
-						label="PLG_CONTENT_SOCIALSHARE_PLATFORMICON_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_PLATFORMICON_DESC"
-						default="d-flex"
-						showon="layout:default"
-				>
-					<option value="d-flex uk-visible">Show Always</option>
-					<option value="d-none uk-hidden uk-hidden">Hide Always</option>
-					<option value="d-none d-sm-flex uk-visible@s">Hide XS (﹤576px)</option>
-					<option value="d-none d-md-flex uk-visible@m">Hide SM and lower (﹤768px)</option>
-					<option value="d-none d-lg-flex uk-visible@l">Hide MD and lower (﹤992px)</option>
-					<option value="d-none d-xl-flex uk-visible@xl">Hide LG and lower (﹤1200px)</option>
-					<option value="d-flex d-xl-none uk-hidden@l">Show LG and lower (﹤1200px)</option>
-					<option value="d-flex d-lg-none uk-hidden@m">Show MD and lower (﹤992px)</option>
-					<option value="d-flex d-md-none uk-hidden@s">Show SM and lower (﹤768px)</option>
-				</field>
-				<field
-						name="displayPlatformName"
-						type="list"
-						label="PLG_CONTENT_SOCIALSHARE_PLATFORMNAME_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_PLATFORMNAME_DESC"
-						default="d-none d-md-flex"
-						showon="layout:default"
-				>
-					<option value="d-flex uk-visible">Show Always</option>
-					<option value="d-none uk-hidden uk-hidden">Hide Always</option>
-					<option value="d-none d-sm-flex uk-visible@s">Hide XS (﹤576px)</option>
-					<option value="d-none d-md-flex uk-visible@m">Hide SM and lower (﹤768px)</option>
-					<option value="d-none d-lg-flex uk-visible@l">Hide MD and lower (﹤992px)</option>
-					<option value="d-none d-xl-flex uk-visible@xl">Hide LG and lower (﹤1200px)</option>
-					<option value="d-flex d-xl-none uk-hidden@l">Show LG and lower (﹤1200px)</option>
-					<option value="d-flex d-lg-none uk-hidden@m">Show MD and lower (﹤992px)</option>
-					<option value="d-flex d-md-none uk-hidden@s">Show SM and lower (﹤768px)</option>
-				</field>
-				<field
-						name="prefixPlatformName"
-						type="text"
-						label="PLG_CONTENT_SOCIALSHARE_PREFIXPLATFORMNAME_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_PREFIXPLATFORMNAME_DESC"
-						default=""
-						showon="layout:default[AND]displayPlatformName!:d-none"
-				/>
+                <field
+                        name="displayPlatformIcon"
+                        type="list"
+                        label="PLG_CONTENT_SOCIALSHARE_PLATFORMICON_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_PLATFORMICON_DESC"
+                        default="d-flex"
+                        showon="layout:default"
+                >
+                    <option value="d-flex uk-visible">Show Always</option>
+                    <option value="d-none uk-hidden uk-hidden">Hide Always</option>
+                    <option value="d-none d-sm-flex uk-visible@s">Hide XS (﹤576px)</option>
+                    <option value="d-none d-md-flex uk-visible@m">Hide SM and lower (﹤768px)</option>
+                    <option value="d-none d-lg-flex uk-visible@l">Hide MD and lower (﹤992px)</option>
+                    <option value="d-none d-xl-flex uk-visible@xl">Hide LG and lower (﹤1200px)</option>
+                    <option value="d-flex d-xl-none uk-hidden@l">Show LG and lower (﹤1200px)</option>
+                    <option value="d-flex d-lg-none uk-hidden@m">Show MD and lower (﹤992px)</option>
+                    <option value="d-flex d-md-none uk-hidden@s">Show SM and lower (﹤768px)</option>
+                </field>
+                <field
+                        name="displayPlatformName"
+                        type="list"
+                        label="PLG_CONTENT_SOCIALSHARE_PLATFORMNAME_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_PLATFORMNAME_DESC"
+                        default="d-none d-md-flex"
+                        showon="layout:default"
+                >
+                    <option value="d-flex uk-visible">Show Always</option>
+                    <option value="d-none uk-hidden uk-hidden">Hide Always</option>
+                    <option value="d-none d-sm-flex uk-visible@s">Hide XS (﹤576px)</option>
+                    <option value="d-none d-md-flex uk-visible@m">Hide SM and lower (﹤768px)</option>
+                    <option value="d-none d-lg-flex uk-visible@l">Hide MD and lower (﹤992px)</option>
+                    <option value="d-none d-xl-flex uk-visible@xl">Hide LG and lower (﹤1200px)</option>
+                    <option value="d-flex d-xl-none uk-hidden@l">Show LG and lower (﹤1200px)</option>
+                    <option value="d-flex d-lg-none uk-hidden@m">Show MD and lower (﹤992px)</option>
+                    <option value="d-flex d-md-none uk-hidden@s">Show SM and lower (﹤768px)</option>
+                </field>
+                <field
+                        name="prefixPlatformName"
+                        type="text"
+                        label="PLG_CONTENT_SOCIALSHARE_PREFIXPLATFORMNAME_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_PREFIXPLATFORMNAME_DESC"
+                        default=""
+                        showon="layout:default[AND]displayPlatformName!:d-none"
+                />
 
-				<field
-						name="yoothemeBackground"
-						type="list"
-						label="PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_DESC"
-						default=""
-						showon="layout:yootheme"
-				>
-					<option value="">PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_NONE</option>
-					<option value="uk-background-default">PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_DEFAULT</option>
-					<option value="uk-background-muted">PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_MUTED</option>
-					<option value="uk-background-primary">PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_PRIMARY</option>
-					<option value="uk-background-secondary">PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_SECONDARY</option>
-				</field>
-				<field
-						name="yoothemeTextColor"
-						type="list"
-						label="PLG_CONTENT_SOCIALSHARE_YOOTHEME_TEXTCOLOR_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_YOOTHEME_TEXTCOLOR_DESC"
-						default=""
-						showon="layout:yootheme"
-				>
-					<option value="">PLG_CONTENT_SOCIALSHARE_YOOTHEME_TEXTCOLOR_INHERIT</option>
-					<option value="uk-light">PLG_CONTENT_SOCIALSHARE_YOOTHEME_TEXTCOLOR_LIGHT</option>
-					<option value="uk-dark">PLG_CONTENT_SOCIALSHARE_YOOTHEME_TEXTCOLOR_DARK</option>
-				</field>
-				<field
-						name="yoothemeStyle"
-						type="list"
-						label="PLG_CONTENT_SOCIALSHARE_YOOTHEME_STYLE_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_YOOTHEME_STYLE_DESC"
-						default="uk-icon-link"
-						showon="layout:yootheme"
-				>
-					<option value="uk-icon">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ICON</option>
-					<option value="uk-icon-link">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ICON_LINK</option>
-					<option value="uk-icon-button">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ICON_BUTTON</option>
-				</field>
-				<field
-						name="yoothemeAlign"
-						type="list"
-						label="PLG_CONTENT_SOCIALSHARE_YOOTHEME_ALIGN_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_YOOTHEME_ALIGN_DESC"
-						default="center"
-						showon="layout:yootheme"
-				>
-					<option value="uk-text-left">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ALIGN_LEFT</option>
-					<option value="uk-text-center">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ALIGN_CENTER</option>
-					<option value="uk-text-right">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ALIGN_RIGHT</option>
-				</field>
-				<field
-						name="yoothemePrefix"
-						type="text"
-						label="PLG_CONTENT_SOCIALSHARE_YOOTHEME_PREFIX_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_YOOTHEME_PREFIX_DESC"
-						default=""
-						showon="layout:yootheme"
-				/>
-				<field
-						name="stickyShare"
-						type="radio"
-						label="PLG_CONTENT_SOCIALSHARE_STICKY_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_STICKY_DESC"
-						class="btn-group btn-group-yesno"
-						default=""
+                <field
+                        name="yoothemeBackground"
+                        type="list"
+                        label="PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_DESC"
+                        default=""
+                        showon="layout:yootheme"
+                >
+                    <option value="">PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_NONE</option>
+                    <option value="uk-background-default">PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_DEFAULT</option>
+                    <option value="uk-background-muted">PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_MUTED</option>
+                    <option value="uk-background-primary">PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_PRIMARY</option>
+                    <option value="uk-background-secondary">PLG_CONTENT_SOCIALSHARE_YOOTHEME_BG_SECONDARY</option>
+                </field>
+                <field
+                        name="yoothemeTextColor"
+                        type="list"
+                        label="PLG_CONTENT_SOCIALSHARE_YOOTHEME_TEXTCOLOR_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_YOOTHEME_TEXTCOLOR_DESC"
+                        default=""
+                        showon="layout:yootheme"
+                >
+                    <option value="">PLG_CONTENT_SOCIALSHARE_YOOTHEME_TEXTCOLOR_INHERIT</option>
+                    <option value="uk-light">PLG_CONTENT_SOCIALSHARE_YOOTHEME_TEXTCOLOR_LIGHT</option>
+                    <option value="uk-dark">PLG_CONTENT_SOCIALSHARE_YOOTHEME_TEXTCOLOR_DARK</option>
+                </field>
+                <field
+                        name="yoothemeStyle"
+                        type="list"
+                        label="PLG_CONTENT_SOCIALSHARE_YOOTHEME_STYLE_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_YOOTHEME_STYLE_DESC"
+                        default="uk-icon-link"
+                        showon="layout:yootheme"
+                >
+                    <option value="uk-icon">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ICON</option>
+                    <option value="uk-icon-link">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ICON_LINK</option>
+                    <option value="uk-icon-button">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ICON_BUTTON</option>
+                </field>
+                <field
+                        name="yoothemeAlign"
+                        type="list"
+                        label="PLG_CONTENT_SOCIALSHARE_YOOTHEME_ALIGN_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_YOOTHEME_ALIGN_DESC"
+                        default="center"
+                        showon="layout:yootheme"
+                >
+                    <option value="uk-text-left">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ALIGN_LEFT</option>
+                    <option value="uk-text-center">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ALIGN_CENTER</option>
+                    <option value="uk-text-right">PLG_CONTENT_SOCIALSHARE_YOOTHEME_ALIGN_RIGHT</option>
+                </field>
+                <field
+                        name="yoothemePrefix"
+                        type="text"
+                        label="PLG_CONTENT_SOCIALSHARE_YOOTHEME_PREFIX_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_YOOTHEME_PREFIX_DESC"
+                        default=""
+                        showon="layout:yootheme"
+                />
+                <field
+                        name="stickyShare"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_STICKY_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_STICKY_DESC"
+                        class="btn-group btn-group-yesno"
+                        default=""
 
-				>
-					<option value="">JNO</option>
-					<option value="sticky-share">JYES</option>
-				</field>
-			</fieldset>
-			<fieldset name="platforms">
-				<field
-					name="displayFacebook"
-					type="radio"
-					label="PLG_CONTENT_SOCIALSHARE_FACEBOOK_LABEL"
-					description="PLG_CONTENT_SOCIALSHARE_FACEBOOK_DESC"
-					class="btn-group btn-group-yesno"
-					default="1"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-						name="displayTwitter"
-						type="radio"
-						label="PLG_CONTENT_SOCIALSHARE_TWITTER_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_TWITTER_DESC"
-						class="btn-group btn-group-yesno"
-						default="1"
+                >
+                    <option value="">JNO</option>
+                    <option value="sticky-share">JYES</option>
+                </field>
+            </fieldset>
+            <fieldset name="platforms">
+                <field
+                        name="displayFacebook"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_FACEBOOK_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_FACEBOOK_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="displayTwitter"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_TWITTER_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_TWITTER_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="1"
 
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-					name="displayLinkedin"
-					type="radio"
-					label="PLG_CONTENT_SOCIALSHARE_LINKEDIN_LABEL"
-					description="PLG_CONTENT_SOCIALSHARE_LINKEDIN_DESC"
-					class="btn-group btn-group-yesno"
-					default="1"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-					name="displayThreads"
-					type="radio"
-					label="PLG_CONTENT_SOCIALSHARE_THREADS_LABEL"
-					description="PLG_CONTENT_SOCIALSHARE_THREADS_DESC"
-					class="btn-group btn-group-yesno"
-					default="0"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-						name="displayMastodon"
-						type="radio"
-						label="PLG_CONTENT_SOCIALSHARE_MASTODON_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_MASTODON_DESC"
-						class="btn-group btn-group-yesno"
-						default="0"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-						name="displayBluesky"
-						type="radio"
-						label="PLG_CONTENT_SOCIALSHARE_BLUESKY_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_BLUESKY_DESC"
-						class="btn-group btn-group-yesno"
-						default="0"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-					name="displayPinterest"
-					type="radio"
-					label="PLG_CONTENT_SOCIALSHARE_PINTEREST_LABEL"
-					description="PLG_CONTENT_SOCIALSHARE_PINTEREST_DESC"
-					class="btn-group btn-group-yesno"
-					default="0"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-						name="displayReddit"
-						type="radio"
-						label="PLG_CONTENT_SOCIALSHARE_REDDIT_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_REDDIT_DESC"
-						class="btn-group btn-group-yesno"
-						default="0"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-						name="displayTumblr"
-						type="radio"
-						label="PLG_CONTENT_SOCIALSHARE_TUMBLR_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_TUMBLR_DESC"
-						class="btn-group btn-group-yesno"
-						default="0"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-					name="displayWhatsapp"
-					type="radio"
-					label="PLG_CONTENT_SOCIALSHARE_WHATSAPP_LABEL"
-					description="PLG_CONTENT_SOCIALSHARE_WHATSAPP_DESC"
-					class="btn-group btn-group-yesno"
-					default="1"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-						name="displayTelegram"
-						type="radio"
-						label="PLG_CONTENT_SOCIALSHARE_TELEGRAM_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_TELEGRAM_DESC"
-						class="btn-group btn-group-yesno"
-						default="0"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-						name="displayFlipboard"
-						type="radio"
-						label="PLG_CONTENT_SOCIALSHARE_FLIPBOARD_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_FLIPBOARD_DESC"
-						class="btn-group btn-group-yesno"
-						default="0"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-						name="displayPocket"
-						type="radio"
-						label="PLG_CONTENT_SOCIALSHARE_POCKET_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_POCKET_DESC"
-						class="btn-group btn-group-yesno"
-						default="0"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="displayLinkedin"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_LINKEDIN_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_LINKEDIN_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="displayThreads"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_THREADS_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_THREADS_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="displayMastodon"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_MASTODON_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_MASTODON_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="displayBluesky"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_BLUESKY_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_BLUESKY_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="displayPinterest"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_PINTEREST_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_PINTEREST_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="displayReddit"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_REDDIT_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_REDDIT_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="displayTumblr"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_TUMBLR_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_TUMBLR_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="displayWhatsapp"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_WHATSAPP_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_WHATSAPP_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="displayTelegram"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_TELEGRAM_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_TELEGRAM_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="displayFlipboard"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_FLIPBOARD_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_FLIPBOARD_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="displayPocket"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_POCKET_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_POCKET_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="0"
 
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-						name="displayTrello"
-						type="radio"
-						label="PLG_CONTENT_SOCIALSHARE_TRELLO_LABEL"
-						description="PLG_CONTENT_SOCIALSHARE_TRELLO_DESC"
-						class="btn-group btn-group-yesno"
-						default="0"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="displayTrello"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_TRELLO_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_TRELLO_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="0"
 
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field
-					name="displayEmail"
-					type="radio"
-					label="PLG_CONTENT_SOCIALSHARE_EMAIL_LABEL"
-					description="PLG_CONTENT_SOCIALSHARE_EMAIL_DESC"
-					class="btn-group btn-group-yesno"
-					default="0"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-			</fieldset>
-		</fields>
-	</config>
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        name="displayEmail"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_EMAIL_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_EMAIL_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
 
-	<scriptfile>script.php</scriptfile>
+    <scriptfile>script.php</scriptfile>
 
     <changelogurl>
-		<![CDATA[https://www.joomill-extensions.com/index.php?option=com_ochsubscriptions&amp;view=changelog&amp;format=xml&amp;cat=17]]>
-	</changelogurl>
+        <![CDATA[https://www.joomill-extensions.com/index.php?option=com_ochsubscriptions&amp;view=changelog&amp;format=xml&amp;cat=17]]>
+    </changelogurl>
 
     <updateservers>
-		<server type="extension" name="Joomill Social Share buttons">
-			<![CDATA[https://www.joomill-extensions.com/index.php?option=com_ochsubscriptions&amp;view=updater&amp;format=xml&amp;cat=17]]>
-		</server>
-	</updateservers>
+        <server type="extension" name="Joomill Social Share buttons">
+            <![CDATA[https://www.joomill-extensions.com/index.php?option=com_ochsubscriptions&amp;view=updater&amp;format=xml&amp;cat=17]]>
+        </server>
+    </updateservers>
 </extension>
