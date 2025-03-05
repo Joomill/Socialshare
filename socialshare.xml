@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.9" type="plugin" group="content" method="upgrade">
+<extension type="plugin" group="content" method="upgrade">
 	<name>PLG_CONTENT_SOCIALSHARE</name>
-	<creationDate>February 2025</creationDate>
-	<author>Joomill</author>
+	<description>PLG_CONTENT_SOCIALSHARE_XML_DESCRIPTION</description>
+	<author>Jeroen Moolenschot | Joomill</author>
 	<authorEmail>info@joomill-extensions.com</authorEmail>
 	<authorUrl>https://www.joomill-extensions.com</authorUrl>
-	<copyright>Copyright (C) 2024 Joomill Extensions. All rights reserved.</copyright>
-	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>2.0.0</version>
-	<description>PLG_CONTENT_SOCIALSHARE_XML_DESCRIPTION</description>
+	<license>GNU General Public License version 3 or later</license>
+	<creationDate>March 2025</creationDate>
+	<copyright>Copyright (c) 2025 Joomill Extensions. All rights reserved.</copyright>
+	<version>2.0.1</version>
+	<namespace path="src">Joomill\Plugin\Fields\Qrcode</namespace>
 
-	<!-- Scripts to run on installation -->
-	<scriptfile>script.php</scriptfile>
-
-	<!-- Files -->
 	<files>
 		<filename plugin="socialshare">socialshare.php</filename>
 		<filename>script.php</filename>
@@ -22,12 +19,10 @@
 		<folder>tmpl</folder>
 	</files>
 
-	<!-- Media -->
 	<media destination="plg_content_socialshare" folder="media">
 		<folder>css</folder>
 	</media>
 
-	<!-- Configuration / Parameters -->
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
@@ -425,7 +420,16 @@
 			</fieldset>
 		</fields>
 	</config>
-    <changelogurl><![CDATA[https://www.joomill-extensions.com/index.php?option=com_ochsubscriptions&amp;view=changelog&amp;format=xml&amp;cat=17]]></changelogurl>
 
-    <updateservers><server type="extension" name="Joomill Social Share buttons"><![CDATA[https://www.joomill-extensions.com/index.php?option=com_ochsubscriptions&amp;view=updater&amp;format=xml&amp;cat=17]]></server></updateservers>
+	<scriptfile>script.php</scriptfile>
+
+    <changelogurl>
+		<![CDATA[https://www.joomill-extensions.com/index.php?option=com_ochsubscriptions&amp;view=changelog&amp;format=xml&amp;cat=17]]>
+	</changelogurl>
+
+    <updateservers>
+		<server type="extension" name="Joomill Social Share buttons">
+			<![CDATA[https://www.joomill-extensions.com/index.php?option=com_ochsubscriptions&amp;view=updater&amp;format=xml&amp;cat=17]]>
+		</server>
+	</updateservers>
 </extension>
