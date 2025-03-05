@@ -9,7 +9,7 @@
     <creationDate>March 2025</creationDate>
     <copyright>Copyright (c) 2025 Joomill Extensions. All rights reserved.</copyright>
     <version>2.0.1</version>
-    <namespace path="src">Joomill\Plugin\Fields\Qrcode</namespace>
+    <namespace path="src">Joomill\Plugin\Content\Socialshare</namespace>
 
     <files>
         <filename plugin="socialshare">socialshare.php</filename>
