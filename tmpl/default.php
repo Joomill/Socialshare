@@ -12,7 +12,7 @@ use Joomla\CMS\Language\Text;
 
 ?>
 
-<div class="share-container <div class=" share-container <?php echo ($view == 'article') ? $stickyShare : ''; ?>">
+<div class="share-container <?php echo ($view == 'article') ? $stickyShare : ''; ?>">
 <ul class="socialshare-buttons clearfix">
 	<?php foreach ($socialPlatforms as $platform => $data): ?>
 		<?php if ($data['enabled']): ?>
