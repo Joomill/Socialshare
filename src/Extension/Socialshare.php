@@ -72,7 +72,7 @@ class Socialshare extends CMSPlugin
 		$position            = $this->params->def('displayPosition', 'top');
 		$target              = $this->params->def('target', '_blank');
 		$stickyShare         = $this->params->get('stickyShare', '');
-		$view                = $this->app->input->getCmd('view', '');
+		$view                = $this->app->getInput()->getCmd('view', '');
 
 		$yoothemeBackground = $this->params->get('yoothemeBackground', '');
 		$yoothemeTextColor  = $this->params->get('yoothemeTextColor', '');
@@ -418,7 +418,7 @@ class Socialshare extends CMSPlugin
 		 */
 
 		// Set the parameters
-		$view = $this->app->input->getCmd('view', '');
+		$view = $this->app->getInput()->getCmd('view', '');
 
 		// Check whether we're displaying the plugin in the current view
 		if ($this->params->get('view' . ucfirst($view), '1') == '0')
@@ -439,7 +439,7 @@ class Socialshare extends CMSPlugin
 		// Get the requested category
 		/** @var Category $category */
 		$category = Table::getInstance('Category');
-		$category->load($this->app->input->getUint('id'));
+		$category->load($this->app->getInput()->getUint('id'));
 
 		// Build the URL for the plugins to use - the site URL should only be the scheme and host segments, Route will take care of the rest
 		$siteURL = Uri::getInstance()->toString(['scheme', 'host', 'port']);

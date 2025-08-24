@@ -6,9 +6,9 @@
     <authorEmail>info@joomill-extensions.com</authorEmail>
     <authorUrl>https://www.joomill-extensions.com</authorUrl>
     <license>GNU General Public License version 3 or later</license>
-    <creationDate>March 2025</creationDate>
+    <creationDate>August 2025</creationDate>
     <copyright>Copyright (c) 2025 Joomill Extensions. All rights reserved.</copyright>
-    <version>3.0.0</version>
+    <version>3.1.0</version>
     <namespace path="src">Joomill\Plugin\Content\Socialshare</namespace>
 
     <files>
