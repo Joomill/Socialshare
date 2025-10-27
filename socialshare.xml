@@ -373,6 +373,17 @@
                     <option value="1">JYES</option>
                 </field>
                 <field
+                        name="displayViber"
+                        type="radio"
+                        label="PLG_CONTENT_SOCIALSHARE_VIBER_LABEL"
+                        description="PLG_CONTENT_SOCIALSHARE_VIBER_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
                         name="displayFlipboard"
                         type="radio"
                         label="PLG_CONTENT_SOCIALSHARE_FLIPBOARD_LABEL"
