@@ -57,12 +57,14 @@ class Socialshare extends CMSPlugin
 			return;
 		}
 
-		/*
-		 * Start processing the plugin event
-		 */
-
 		// Check if device is mobile
-		$isMobile = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+		$userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
+		$isMobile  = false;
+
+		if ($userAgent !== '')
+		{
+			$isMobile = stripos($userAgent, 'mobile') !== false;
+		}
 
 		// Set the parameters
 		$displayPlatformName = $this->params->get('displayPlatformName', '1');
