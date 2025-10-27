@@ -185,6 +185,14 @@
     background-color: #29a9eb;
 }
 
+.socialshare-buttons li.socialshare-viber a {
+    background-color: #574e92;
+}
+
+.socialshare-buttons li.socialshare-viber a:hover {
+    background-color: #4b437e;
+}
+
 .socialshare-buttons li.socialshare-flipboard a {
     background-color: #b50808;
 }
