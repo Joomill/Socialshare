@@ -67,6 +67,7 @@
 .socialshare-buttons li a .socialshare-icon svg {
     height: 18px;
     width: 18px;
+    margin: 0px;
 }
 
 .socialshare-buttons li a .socialshare-icon svg path {
