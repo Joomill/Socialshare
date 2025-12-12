@@ -8,7 +8,7 @@
     <license>GNU General Public License version 3 or later</license>
     <creationDate>December 2025</creationDate>
     <copyright>Copyright (c) 2025 Joomill Extensions. All rights reserved.</copyright>
-    <version>3.2.1</version>
+    <version>3.2.2</version>
     <namespace path="src">Joomill\Plugin\Content\Socialshare</namespace>
 
     <files>
