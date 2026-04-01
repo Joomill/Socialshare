@@ -446,7 +446,7 @@ class Socialshare extends CMSPlugin
 		$siteURL = Uri::getInstance()->toString(['scheme', 'host', 'port']);
 		$itemURL = $siteURL . Route::_(RouteHelper::getCategoryRoute($category->id));
 
-		$description = !empty($category->metadesc) ? $category->metadesc : strip_tags($category->description);
+		$description = !empty($category->metadesc) ? $category->metadesc : strip_tags($category->description ?? '');
 
 		// We're done here
 		self::$hasProcessedCategory = true;
