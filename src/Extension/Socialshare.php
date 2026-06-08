@@ -21,9 +21,6 @@ use Joomla\CMS\Table\Table;
 use Joomla\CMS\Uri\Uri;
 
 
-// Import media
-HTMLHelper::_('stylesheet', 'plg_content_socialshare/socialshare.css', ['version' => 'auto', 'relative' => true]);
-
 class Socialshare extends CMSPlugin
 {
 	private static $hasProcessedCategory = false;
@@ -56,6 +53,8 @@ class Socialshare extends CMSPlugin
 		{
 			return;
 		}
+
+		HTMLHelper::_('stylesheet', 'plg_content_socialshare/socialshare.css', ['version' => 'auto', 'relative' => true]);
 
 		// Check if device is mobile
 		$userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
