@@ -16,14 +16,11 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\CMS\Router\Route;
-use Joomla\CMS\Table\Category;
-use Joomla\CMS\Table\Table;
 use Joomla\CMS\Uri\Uri;
 
 
 class Socialshare extends CMSPlugin
 {
-	private static $hasProcessedCategory = false;
 	protected $app;
 	protected $autoloadLanguage = true;
 	protected $db;
@@ -363,91 +360,4 @@ class Socialshare extends CMSPlugin
 		return $this->db->loadObject();
 	}
 
-	/**
-	 * Listener for the `onContentPrepare` event
-	 *
-	 * @param   string    $context  The context of the content being passed to the plugin.
-	 * @param   object   &$article  The article object.  Note $article->text is also available
-	 * @param   object   &$params   The article params
-	 * @param   integer   $page     The 'page' number
-	 *
-	 * @return  void
-	 *
-	 * @since   1.1
-	 */
-	public function onContentPrepare($context, &$article, &$params, $page)
-	{
-		/*
-		 * Validate the plugin should run in the current context
-		 */
-
-		// Has the plugin already triggered?
-		if (self::$hasProcessedCategory)
-		{
-			return;
-		}
-
-		// Context check - This only works for com_content
-		if (strpos($context, 'com_content') === false)
-		{
-			self::$hasProcessedCategory = true;
-
-			return;
-		}
-
-		// Check if the plugin is enabled
-		if (PluginHelper::isEnabled('content', 'socialshare') == false)
-		{
-			self::$hasProcessedCategory = true;
-
-			return;
-		}
-
-		// Make sure the document is an HTML document
-		$document = $this->app->getDocument();
-
-		if ($document->getType() != 'html')
-		{
-			self::$hasProcessedCategory = true;
-
-			return;
-		}
-
-		/*
-		 * Start processing the plugin event
-		 */
-
-		// Set the parameters
-		$view = $this->app->getInput()->getCmd('view', '');
-
-		// Check whether we're displaying the plugin in the current view
-		if ($this->params->get('view' . ucfirst($view), '1') == '0')
-		{
-			self::$hasProcessedCategory = true;
-
-			return;
-		}
-
-		// The featured view is not yet supported and the article view never will be
-		if (in_array($view, ['article', 'featured']))
-		{
-			self::$hasProcessedCategory = true;
-
-			return;
-		}
-
-		// Get the requested category
-		/** @var Category $category */
-		$category = Table::getInstance('Category');
-		$category->load($this->app->getInput()->getUint('id'));
-
-		// Build the URL for the plugins to use - the site URL should only be the scheme and host segments, Route will take care of the rest
-		$siteURL = Uri::getInstance()->toString(['scheme', 'host', 'port']);
-		$itemURL = $siteURL . Route::_(RouteHelper::getCategoryRoute($category->id));
-
-		$description = !empty($category->metadesc) ? $category->metadesc : strip_tags($category->description ?? '');
-
-		// We're done here
-		self::$hasProcessedCategory = true;
-	}
 }
