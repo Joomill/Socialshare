@@ -19,14 +19,22 @@ use Joomla\CMS\Router\Route;
 use Joomla\CMS\Uri\Uri;
 use Joomla\Database\DatabaseAwareTrait;
 use Joomla\Database\DatabaseInterface;
+use Joomla\Event\SubscriberInterface;
 
 
-class Socialshare extends CMSPlugin
+class Socialshare extends CMSPlugin implements SubscriberInterface
 {
 	use DatabaseAwareTrait;
 
 	protected $app;
 	protected $autoloadLanguage = true;
+
+	public static function getSubscribedEvents(): array
+	{
+		return [
+			'onContentAfterTitle' => 'onContentAfterTitle',
+		];
+	}
 
 	public function onContentAfterTitle(string $context, object &$article, object &$params, int $page): void
 	{
