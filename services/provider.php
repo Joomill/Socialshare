@@ -28,21 +28,27 @@ return new class () implements ServiceProviderInterface {
 	 *
 	 * @since   4.3.0
 	 */
-	public function register(Container $container)
+	public function register(Container $container): void
 	{
+		$factory = function (Container $container): PluginInterface {
+			$subject = $container->get(DispatcherInterface::class);
+			$plugin  = new Socialshare(
+				$subject,
+				(array) PluginHelper::getPlugin('content', 'socialshare')
+			);
+			$plugin->setApplication(Factory::getApplication());
+			$plugin->setDatabase($container->get(DatabaseInterface::class));
+
+			return $plugin;
+		};
+
+		// Lazy plugin loading exists from Joomla 6.1; fall back to a plain
+		// factory closure on J5 / 6.0 where Container::lazy() does not exist.
 		$container->set(
 			PluginInterface::class,
-			function (Container $container) {
-				$subject = $container->get(DispatcherInterface::class);
-				$plugin  = new Socialshare(
-					$subject,
-					(array) PluginHelper::getPlugin('content', 'socialshare')
-				);
-				$plugin->setApplication(Factory::getApplication());
-				$plugin->setDatabase($container->get(DatabaseInterface::class));
-
-				return $plugin;
-			}
+			method_exists($container, 'lazy')
+				? $container->lazy(Socialshare::class, $factory)
+				: $factory
 		);
 	}
 };

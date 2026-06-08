@@ -17,7 +17,7 @@ use Joomla\CMS\Log\Log;
 
 class SocialshareInstallerScript implements InstallerScriptInterface
 {
-	private string $minimumJoomlaVersion = '4.0';
+	private string $minimumJoomlaVersion = '5.0';
 	private string $minimumPHPVersion    = JOOMLA_MINIMUM_PHP;
 
 	public function preflight(string $type, InstallerAdapter $adapter): bool
