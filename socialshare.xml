@@ -10,7 +10,8 @@
     <copyright>(C) 2025 Joomill Extensions</copyright>
     <version>3.2.2</version>
     <namespace path="src">Joomill\Plugin\Content\Socialshare</namespace>
-    <helpurl>https://www.joomill-extensions.com/documentation/social-share-plugin</helpurl>
+    <!-- Help button URL -->
+    <help key="" url="https://www.joomill-extensions.com/documentation/social-share-plugin" />
 
     <!-- Scripts to run on installation -->
     <scriptfile>script.php</scriptfile>
