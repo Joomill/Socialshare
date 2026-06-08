@@ -350,12 +350,11 @@ class Socialshare extends CMSPlugin
 	 */
 	private function loadArticle($article)
 	{
-		// Query the database for the article text
 		$query = $this->db->getQuery(true)
 			->select('*')
 			->from($this->db->quoteName('#__content'))
-			->where($this->db->quoteName('introtext') . ' = ' . $this->db->quote($article->text));
-		$this->db->setQuery($query);
+			->where($this->db->quoteName('id') . ' = ' . (int) $article->id);
+		$this->db->setQuery($query, 0, 1);
 
 		return $this->db->loadObject();
 	}
