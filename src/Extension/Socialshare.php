@@ -17,13 +17,16 @@ use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\CMS\Router\Route;
 use Joomla\CMS\Uri\Uri;
+use Joomla\Database\DatabaseAwareTrait;
+use Joomla\Database\DatabaseInterface;
 
 
 class Socialshare extends CMSPlugin
 {
+	use DatabaseAwareTrait;
+
 	protected $app;
 	protected $autoloadLanguage = true;
-	protected $db;
 
 	public function onContentAfterTitle($context, &$article, &$params, $page)
 	{
@@ -345,13 +348,14 @@ class Socialshare extends CMSPlugin
 	 */
 	private function loadArticle($article)
 	{
-		$query = $this->db->getQuery(true)
+		$db    = $this->getDatabase();
+		$query = $db->getQuery(true)
 			->select('*')
-			->from($this->db->quoteName('#__content'))
-			->where($this->db->quoteName('id') . ' = ' . (int) $article->id);
-		$this->db->setQuery($query, 0, 1);
+			->from($db->quoteName('#__content'))
+			->where($db->quoteName('id') . ' = ' . (int) $article->id);
+		$db->setQuery($query, 0, 1);
 
-		return $this->db->loadObject();
+		return $db->loadObject();
 	}
 
 }
