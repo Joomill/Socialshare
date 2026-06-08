@@ -28,7 +28,7 @@ class Socialshare extends CMSPlugin
 	protected $app;
 	protected $autoloadLanguage = true;
 
-	public function onContentAfterTitle($context, &$article, &$params, $page)
+	public function onContentAfterTitle(string $context, object &$article, object &$params, int $page): void
 	{
 		/*
 		 * Validate the plugin should run in the current context
@@ -342,11 +342,11 @@ class Socialshare extends CMSPlugin
 	 *
 	 * @param   object  $article  The content object
 	 *
-	 * @return  object  The full content object
+	 * @return  object|null  The full content object
 	 *
 	 * @since   1.0
 	 */
-	private function loadArticle($article)
+	private function loadArticle(object $article): ?object
 	{
 		$db    = $this->getDatabase();
 		$query = $db->getQuery(true)
