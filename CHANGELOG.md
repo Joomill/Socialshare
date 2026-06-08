@@ -4,19 +4,11 @@ All notable changes to the Extension are documented in this file.
 
 ## Unreleased
 
-- Refactor: implement `SubscriberInterface` for explicit event registration (Joomla 5/6 standard)
-- Refactor: inject `DatabaseInterface` via `DatabaseAwareTrait`; remove implicit `$db` property
-- Refactor: `script.php` implements `InstallerScriptInterface` with typed method signatures
-- Add: PHP type declarations on event handler and `loadArticle()`
-- Add: lazy plugin loading with `method_exists($container, 'lazy')` guard; activates on Joomla 6.1+ / PHP 8.4+
-- Fix: stylesheet was loaded at class-load time; moved inside event handler after context checks
-- Fix: all HTML attribute and text output in templates now escaped with `htmlspecialchars()`
-- Fix: `loadArticle()` now queries by article `id` instead of matching introtext content; adds `LIMIT 1`
-- Fix: `HTTP_USER_AGENT` now read via Joomla input layer instead of `$_SERVER` superglobal
-- Remove: dead `onContentPrepare` method and accompanying static flag
-- Changed: minimum Joomla version bumped from 4.0 to 5.0
-- Changed: Update Mastodon sharing URL
-- Fix: Avoid PHP warning by handling null category descriptions
+- Add: faster plugin loading on Joomla 6.1+ with PHP 8.4 or higher
+- Fix: sharing buttons now work correctly in category and featured article views
+- Fix: security improvements to how output is rendered in the templates
+- Fix: improved compatibility with Joomla 5 and 6 internals
+- Changed: minimum required Joomla version is now 5.0
 
 ## TODO
 - Addition: help buttons now link to the Joomill documentation page
