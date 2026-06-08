@@ -11,42 +11,19 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Installer\InstallerAdapter;
+use Joomla\CMS\Installer\InstallerScriptInterface;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Log\Log;
 
-class plgContentsocialshareInstallerScript
+class SocialshareInstallerScript implements InstallerScriptInterface
 {
-	/**
-	 * Minimum Joomla version to check
-	 *
-	 * @var    string
-	 * @since  4.0.0
-	 */
-	private $minimumJoomlaVersion = '4.0';
+	private string $minimumJoomlaVersion = '4.0';
+	private string $minimumPHPVersion    = JOOMLA_MINIMUM_PHP;
 
-	/**
-	 * Minimum PHP version to check
-	 *
-	 * @var    string
-	 * @since  4.0.0
-	 */
-	private $minimumPHPVersion = JOOMLA_MINIMUM_PHP;
-
-	/**
-	 * Function called before extension installation/update/removal procedure commences
-	 *
-	 * @param   string            $type    The type of change (install, update or discover_install, not uninstall)
-	 * @param   InstallerAdapter  $parent  The class calling this method
-	 *
-	 * @return  boolean  True on success
-	 * @throws Exception
-	 * @since  4.0.0
-	 */
-	public function preflight($type, $parent): bool
+	public function preflight(string $type, InstallerAdapter $adapter): bool
 	{
 		if ($type !== 'uninstall')
 		{
-			// Check for the minimum PHP version before continuing
 			if (!empty($this->minimumPHPVersion) && version_compare(PHP_VERSION, $this->minimumPHPVersion, '<'))
 			{
 				Log::add(
@@ -57,7 +34,7 @@ class plgContentsocialshareInstallerScript
 
 				return false;
 			}
-			// Check for the minimum Joomla version before continuing
+
 			if (!empty($this->minimumJoomlaVersion) && version_compare(JVERSION, $this->minimumJoomlaVersion, '<'))
 			{
 				Log::add(
@@ -73,16 +50,7 @@ class plgContentsocialshareInstallerScript
 		return true;
 	}
 
-	/**
-	 * Function called after extension installation/update/removal procedure commences
-	 *
-	 * @param   string            $type    The type of change (install, update or discover_install, not uninstall)
-	 * @param   InstallerAdapter  $parent  The class calling this method
-	 *
-	 * @return  boolean  True on success
-	 * @since  4.0.0
-	 */
-	public function postflight($type, $parent)
+	public function postflight(string $type, InstallerAdapter $adapter): bool
 	{
 		if ($type === 'install')
 		{
@@ -109,6 +77,7 @@ class plgContentsocialshareInstallerScript
 			echo '<a class="m-2" href="https://community.joomla.org/service-providers-directory/listings/67:joomill.html" target="_blank"><i class="fa-brands fa-joomla"> </i></a>';
 			echo '</div>';
 		}
+
 		if ($type === 'uninstall')
 		{
 			echo '<style>a[target="_blank"]::before {display: none};</style>';
@@ -132,25 +101,34 @@ class plgContentsocialshareInstallerScript
 		return true;
 	}
 
-	public function install($parent)
+	public function install(InstallerAdapter $adapter): bool
 	{
-		// Enable the extension
 		$this->enablePlugin();
 
 		return true;
 	}
 
-	private function enablePlugin()
+	public function uninstall(InstallerAdapter $adapter): bool
+	{
+		return true;
+	}
+
+	public function update(InstallerAdapter $adapter): bool
+	{
+		return true;
+	}
+
+	private function enablePlugin(): void
 	{
 		try
 		{
 			$db    = Factory::getContainer()->get('DatabaseDriver');
 			$query = $db->getQuery(true)
-				->update($db->qn('#__extensions'))
-				->set($db->qn('enabled') . ' = ' . $db->q(1))
-				->where('type = ' . $db->q('plugin'))
-				->where('folder = ' . $db->q('content'))
-				->where('element = ' . $db->q('socialshare'));
+				->update($db->quoteName('#__extensions'))
+				->set($db->quoteName('enabled') . ' = ' . $db->quote(1))
+				->where('type = ' . $db->quote('plugin'))
+				->where('folder = ' . $db->quote('content'))
+				->where('element = ' . $db->quote('socialshare'));
 			$db->setQuery($query);
 			$db->execute();
 		}
