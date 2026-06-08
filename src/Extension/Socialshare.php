@@ -54,13 +54,8 @@ class Socialshare extends CMSPlugin
 		HTMLHelper::_('stylesheet', 'plg_content_socialshare/socialshare.css', ['version' => 'auto', 'relative' => true]);
 
 		// Check if device is mobile
-		$userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
-		$isMobile  = false;
-
-		if ($userAgent !== '')
-		{
-			$isMobile = stripos($userAgent, 'mobile') !== false;
-		}
+		$userAgent = $this->app->getInput()->server->getString('HTTP_USER_AGENT', '');
+		$isMobile  = $userAgent !== '' && stripos($userAgent, 'mobile') !== false;
 
 		// Set the parameters
 		$displayPlatformName = $this->params->get('displayPlatformName', '1');
