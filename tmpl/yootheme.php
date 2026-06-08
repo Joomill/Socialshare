@@ -12,19 +12,19 @@ use Joomla\CMS\Language\Text;
 
 ?>
 
-    <div class="socialshare-uikit-container uk-padding-small <?php echo ($view == 'article') ? $stickyShare : ''; ?> <?php echo $yoothemeBackground; ?> <?php echo $yoothemeTextColor; ?> <?php echo $yoothemeAlign; ?>">
-        <span class="socialshare-uikit-text"><?php echo Text::_($yoothemePrefix); ?></span>
+    <div class="socialshare-uikit-container uk-padding-small <?php echo htmlspecialchars(($view == 'article') ? $stickyShare : '', ENT_QUOTES, 'UTF-8'); ?> <?php echo htmlspecialchars($yoothemeBackground, ENT_QUOTES, 'UTF-8'); ?> <?php echo htmlspecialchars($yoothemeTextColor, ENT_QUOTES, 'UTF-8'); ?> <?php echo htmlspecialchars($yoothemeAlign, ENT_QUOTES, 'UTF-8'); ?>">
+        <span class="socialshare-uikit-text"><?php echo htmlspecialchars(Text::_($yoothemePrefix), ENT_QUOTES, 'UTF-8'); ?></span>
         <ul class="socialshare-uikit uk-child-width-auto uk-grid-small uk-flex-inline uk-flex-middle uk-grid">
 			<?php foreach ($socialPlatforms as $platform => $data): ?>
 				<?php if ($data['enabled']): ?>
                     <li class="el-item">
-                        <a href="<?php echo $data['url']; ?>"
-                           target="<?php echo $target; ?>"
+                        <a href="<?php echo htmlspecialchars($data['url'], ENT_QUOTES, 'UTF-8'); ?>"
+                           target="<?php echo htmlspecialchars($target, ENT_QUOTES, 'UTF-8'); ?>"
                            rel="referrer noopener"
-                           aria-label="<?php echo Text::_($prefixPlatformName); ?> <?php echo $data['text']; ?> <?php if ($target == "_blank") { ?>, opens a new window<?php } ?>"
-                           title="<?php echo Text::_($prefixPlatformName); ?> <?php echo $data['text']; ?>"
-                           class="<?php echo $yoothemeStyle; ?>"
-                           uk-icon="<?php echo strtolower(str_ireplace('email', 'mail', $data['text'])); ?>">
+                           aria-label="<?php echo htmlspecialchars(Text::_($prefixPlatformName) . ' ' . $data['text'] . ($target === '_blank' ? ', opens a new window' : ''), ENT_QUOTES, 'UTF-8'); ?>"
+                           title="<?php echo htmlspecialchars(Text::_($prefixPlatformName) . ' ' . $data['text'], ENT_QUOTES, 'UTF-8'); ?>"
+                           class="<?php echo htmlspecialchars($yoothemeStyle, ENT_QUOTES, 'UTF-8'); ?>"
+                           uk-icon="<?php echo htmlspecialchars(strtolower(str_ireplace('email', 'mail', $data['text'])), ENT_QUOTES, 'UTF-8'); ?>">
                         </a>
                     </li>
 				<?php endif; ?>
