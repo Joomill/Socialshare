@@ -6,12 +6,10 @@
     <authorEmail>info@joomill.nl</authorEmail>
     <authorUrl>https://www.joomill-extensions.com</authorUrl>
     <license>GNU General Public License version 3 or later</license>
-    <creationDate>December 2025</creationDate>
-    <copyright>(C) 2025 Joomill Extensions</copyright>
-    <version>3.2.2</version>
+    <creationDate>June 2026</creationDate>
+    <copyright>(C) 2026 Joomill Extensions</copyright>
+    <version>3.3.0</version>
     <namespace path="src">Joomill\Plugin\Content\Socialshare</namespace>
-    <!-- Help button URL -->
-    <help key="" url="PLG_CONTENT_SOCIALSHARE_HELP_URL" />
 
     <!-- Scripts to run on installation -->
     <scriptfile>script.php</scriptfile>
@@ -251,6 +249,16 @@
                     <option value="">JNO</option>
                     <option value="sticky-share">JYES</option>
                 </field>
+                <field
+                        type="editor"
+                        name="custom_css"
+                        label="PLG_CONTENT_SOCIALSHARE_CUSTOM_CSS_LABEL"
+                        default=""
+                        rows="10"
+                        buttons="no"
+                        editor="codemirror|none"
+                        filter="raw"
+                />
             </fieldset>
             <fieldset name="platforms">
                 <field
@@ -422,11 +430,15 @@
         </fields>
     </config>
 
-    <!-- Update servers -->
+    <!-- Help button URL -->
+    <help key="" url="PLG_CONTENT_SOCIALSHARE_HELP_URL" />
+
+    <!-- Changelog -->
     <changelogurl>
         <![CDATA[https://www.joomill-extensions.com/index.php?option=com_ochsubscriptions&amp;view=changelog&amp;format=xml&amp;cat=17]]>
     </changelogurl>
 
+    <!-- Update servers -->
     <updateservers>
         <server type="extension" name="Joomill Social Share buttons">
             <![CDATA[https://www.joomill-extensions.com/index.php?option=com_ochsubscriptions&amp;view=updater&amp;format=xml&amp;cat=17]]>

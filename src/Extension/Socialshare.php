@@ -29,6 +29,7 @@ class Socialshare extends CMSPlugin implements SubscriberInterface
 
 	protected $app;
 	protected $autoloadLanguage = true;
+	protected $cssInjected = false;
 
 	public static function getSubscribedEvents(): array
 	{
@@ -63,6 +64,13 @@ class Socialshare extends CMSPlugin implements SubscriberInterface
 		}
 
 		HTMLHelper::_('stylesheet', 'plg_content_socialshare/socialshare.css', ['version' => 'auto', 'relative' => true]);
+
+		// Inject the optional custom CSS once into the document head via the WebAssetManager.
+		if (!$this->cssInjected && $this->params->get('custom_css'))
+		{
+			$document->getWebAssetManager()->addInlineStyle($this->params->get('custom_css'));
+			$this->cssInjected = true;
+		}
 
 		// Check if device is mobile
 		$userAgent = $this->app->getInput()->server->getString('HTTP_USER_AGENT', '');
